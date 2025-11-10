@@ -1,5 +1,9 @@
 # depslib dependency file v1.0
-1762670838 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\compra.cpp
+1762755092 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\compra.cpp
+	<string>
+	<iostream>
+	"compra.h"
+	"fecha.h"
 
 1762670838 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\fecha.cpp
 	<iostream>
@@ -29,4 +33,8 @@
 	"Producto.h"
 
 1762752672 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\producto.h
+
+1762755092 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\compra.h
+	<string>
+	"fecha.h"
 

@@ -12,28 +12,24 @@ private:
  int _idCompra;
  int _idProveedor;
  Fecha _fecha;
- float _importe;
- int _idProducto;
- int _cantidad;
+ float _total;
+ bool _anulada = false;
+
 
 public:
     ///setters
     void setIdCompra(int idCompra);
     void setIdProveedor(int idProveedor);
     void setFecha(int dia, int mes, int anio);
-    void setImporte(float importe);
-    void setIdProducto(int idProducto);
-    void setCantidad(int cantidad);
+    void setTotal(float total);
+    void setEstado(bool estado);
 
     ///getters
     int getIdCompra();
     int getIdProveedor();
-    string getFecha();
-    float getImporte();
-    int getIdProducto();
-    int getCantidad();
-
-    void mostrarProducto();
+    std::string getFecha();
+    float getTotal();
+    bool getEstado();
 
 };
 
