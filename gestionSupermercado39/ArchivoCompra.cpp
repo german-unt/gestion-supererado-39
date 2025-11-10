@@ -40,7 +40,7 @@ bool ArchivoCompra::listar(){
     }
 
     while(fread(&registro, sizeof(Compra),1,pArchivo)==1){
-        registro.mostrarProducto();
+        registro.mostrarCompra();
     }
     fclose(pArchivo);
     return true;
@@ -92,7 +92,7 @@ bool ArchivoCompra::eliminarLogico(int idCompra){
     while(fread(&registroActual,sizeof(Compra),1,pArchivo)==1){
         if(registroActual.getIdCompra()== idCompra){
             fseek(pArchivo,-sizeof(Compra),SEEK_CUR);
-            //registroActual.setEstado(false);
+            registroActual.setEstado(false);
             modificado = fwrite(&registroActual,sizeof(Compra),1,pArchivo) ? true : false;
             break;
         }
@@ -111,9 +111,8 @@ bool ArchivoCompra::listarComprasXProveedor(int CodigoProveedor){
     }
 
     while(fread(&registroActual,sizeof(Compra),1,pArchivo)==1){
-        if(registroActual.getEstado() == true && registroActual.getCodigoProveedor() == CodigoProveedor){ // preguntar si le agg estado a la compra, puede ser que se anule!
-            //poner mostrarCompra
-            registroActual.getNombre();
+        if(registroActual.getEstado() == true && registroActual.getIdProveedor() == CodigoProveedor){
+            registroActual.mostrarCompra();
         }
     }
     fclose(pArchivo);
@@ -133,8 +132,7 @@ bool ArchivoCompra::listarComprasXMes(int mes){
 
     while(fread(&registroActual,sizeof(Compra),1,pArchivo)==1){
         if(registroActual.getEstado() == true && registroActual.getFecha().getMes() == mes){
-            //poner mostrarCompra
-            registroActual.getNombre();
+            registroActual.mostrarCompra();
         }
     }
     fclose(pArchivo);
@@ -153,12 +151,10 @@ bool ArchivoCompra::listarComprasXAnio(int anio){
 
     while(fread(&registroActual,sizeof(Compra),1,pArchivo)==1){
         if(registroActual.getEstado() == true && registroActual.getFecha().getAnio() == anio){
-            //poner mostrarCompra
-            registroActual.getNombre();
+            registroActual.mostrarCompra();
         }
     }
     fclose(pArchivo);
     return true;
-
 
 }

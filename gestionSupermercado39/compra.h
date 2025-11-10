@@ -27,9 +27,12 @@ public:
     ///getters
     int getIdCompra();
     int getIdProveedor();
-    std::string getFecha();
+    std::string getFechatoString();
+    Fecha getFecha();
     float getTotal();
     bool getEstado();
+
+    void mostrarCompra();
 
 };
 

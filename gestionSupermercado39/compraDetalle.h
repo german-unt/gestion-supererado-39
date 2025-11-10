@@ -22,5 +22,5 @@ public:
     float getPrecioUnitario();
     float getSubtotal();
 
-    void mostrar();
+    void mostrarCompraDetalle();
 };

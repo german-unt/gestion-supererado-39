@@ -17,13 +17,18 @@ void Compra::setEstado(bool estado){_anulada  = estado; }
 ///getters
 int Compra::getIdCompra(){return _idCompra; }
 int Compra::getIdProveedor(){return _idProveedor;   }
-std::string Compra::getFecha(){return _fecha.toString();    }
+string Compra::getFechatoString(){return _fecha.toString();    }
+Fecha Compra::getFecha(){return _fecha;}
 float Compra::getTotal(){return _total; }
 bool Compra::getEstado(){return _anulada;   }
 
-
-
-
+void Compra::mostrarCompra(){
+    cout << "ID COMPRA: " << getIdCompra() << endl;
+    cout << "ID PROVEEDOR: " << getIdProveedor() << endl;
+    cout << "FECHA: " << getFechatoString() << endl;
+    cout << "TOTAL: " << getTotal() << endl;
+    cout << "*******************************************" << endl;
+}
 
 
 

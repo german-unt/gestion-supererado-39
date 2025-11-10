@@ -16,7 +16,7 @@ float CompraDetalle::getPrecioUnitario()  { return _precioUnitario; }
 float CompraDetalle::getSubtotal()  { return _subtotal; }
 
 
-void CompraDetalle::mostrar(){
+void CompraDetalle::mostrarCompraDetalle(){
     cout << "ID COMPRA: " << getIdCompra() << endl;
     cout << "ID PRODUCTO: " << getIdProducto() << endl;
     cout << "PRECIO UNITARIO: " << getPrecioUnitario() << endl;
