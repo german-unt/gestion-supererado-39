@@ -1,5 +1,6 @@
-#ifndef PRODUCTO_H_INCLUDED
-#define PRODUCTO_H_INCLUDED
+
+#pragma once
+
 class producto{
 private:
   int idProducto;
@@ -40,4 +41,4 @@ bool getEliminado();
 };
 
 
-#endif // PRODUCTO_H_INCLUDED
+

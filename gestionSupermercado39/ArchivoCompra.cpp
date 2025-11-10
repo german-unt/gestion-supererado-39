@@ -40,8 +40,7 @@ bool ArchivoCompra::listar(){
     }
 
     while(fread(&registro, sizeof(Compra),1,pArchivo)==1){
-        //poner mostrarCompra
-        registro.getNombre();
+        registro.mostrarProducto();
     }
     fclose(pArchivo);
     return true;
@@ -57,7 +56,7 @@ int ArchivoCompra::modificarRegistro(Compra registro, int idCompra){
     }
     int modificado = 0;
     while(fread(&registroActual, sizeof(Compra),1,pArchivo)==1){
-        if(registroActual.getId() == idCompra){
+        if(registroActual.getIdCompra() == idCompra){
             fseek(pArchivo,-sizeof(Compra),SEEK_CUR);
             modificado = fwrite(&registro, sizeof(Compra),1,pArchivo);
             fclose(pArchivo);
@@ -91,9 +90,9 @@ bool ArchivoCompra::eliminarLogico(int idCompra){
     bool modificado=false;
 
     while(fread(&registroActual,sizeof(Compra),1,pArchivo)==1){
-        if(registroActual.getId()== idCompra){
+        if(registroActual.getIdCompra()== idCompra){
             fseek(pArchivo,-sizeof(Compra),SEEK_CUR);
-            registroActual.setEstado(false);
+            //registroActual.setEstado(false);
             modificado = fwrite(&registroActual,sizeof(Compra),1,pArchivo) ? true : false;
             break;
         }
