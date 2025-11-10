@@ -12,7 +12,7 @@ private:
  int _idCompra;
  int _idProveedor;
  Fecha _fecha;
- float _total;
+ float _total = 0;
  bool _anulada = false;
 
 
@@ -33,7 +33,7 @@ public:
     bool getEstado();
 
     void mostrarCompra();
-
+    void sumarAlTotal(float subtotal);
 };
 
 

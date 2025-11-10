@@ -22,6 +22,10 @@ Fecha Compra::getFecha(){return _fecha;}
 float Compra::getTotal(){return _total; }
 bool Compra::getEstado(){return _anulada;   }
 
+
+
+void Compra::sumarAlTotal(float subtotal){ _total += subtotal; }
+
 void Compra::mostrarCompra(){
     cout << "ID COMPRA: " << getIdCompra() << endl;
     cout << "ID PROVEEDOR: " << getIdProveedor() << endl;

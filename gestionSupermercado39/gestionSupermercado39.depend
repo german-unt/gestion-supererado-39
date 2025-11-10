@@ -34,7 +34,7 @@
 
 1762752672 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\producto.h
 
-1762757609 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\compra.h
+1762760838 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\compra.h
 	<string>
 	"fecha.h"
 
@@ -53,4 +53,13 @@
 1762670673 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\archivocompra.h
 	<string>
 	"Compra.h"
+
+1762759464 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\archivocompradetalle.cpp
+	<cstdio>
+	<string>
+	"ArchivoCompraDetalle.h"
+
+1762760267 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\archivocompradetalle.h
+	<string>
+	"compraDetalle.h"
 
