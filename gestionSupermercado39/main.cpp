@@ -9,6 +9,7 @@ using namespace std;
 
 void menuProductos() {
     ArchivoProducto arch("ArchivoProducto.dat");
+    Producto producto;
     int opc;
     do {
         cout << "----- MENU PRODUCTOS -----" << endl;
@@ -22,7 +23,7 @@ void menuProductos() {
         switch (opc) {
         case 1: {
             Producto reg;
-            reg.cargarProducto();              // usa el que vos ya tenes
+            reg = reg.cargarProducto();              // usa el que vos ya tenes
             int ok = arch.agregarRegistro(reg);
             if (ok == 1) {
                 cout << "Producto guardado." << endl;
@@ -33,10 +34,7 @@ void menuProductos() {
         case 2: {
             system("cls");
             cout << "LISTADO DE PRODUCTOS" << endl;
-            bool ok = arch.listar();           // en tu ArchivoProducto poné que esto muestre
-            if (!ok) {
-                cout << "No se pudo abrir el archivo o no hay datos." << endl;
-            }
+            producto.mostrarTodos() ;           // en tu ArchivoProducto poné que esto muestre
         } break;
         case 3: {
             system("cls");

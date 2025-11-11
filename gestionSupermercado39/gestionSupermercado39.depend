@@ -125,3 +125,136 @@
 	<iostream>
 	<cstdlib>
 
+1762894063 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\archivocompra.cpp
+	<iostream>
+	<cstring>
+	"Compra.h"
+	"ArchivoCompra.h"
+
+1762800811 c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\compra.h
+	<string>
+	"fecha.h"
+
+1762800811 c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\fecha.h
+	<string>
+
+1762894063 c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\archivocompra.h
+	<string>
+	"Compra.h"
+
+1762894063 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\archivocompradetalle.cpp
+	<cstdio>
+	<cstring>
+	"ArchivoCompraDetalle.h"
+
+1762894063 c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\archivocompradetalle.h
+	<string>
+	"compraDetalle.h"
+
+1762800811 c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\compradetalle.h
+
+1762901180 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\archivoproducto.cpp
+	"ArchivoProducto.h"
+	"Producto.h"
+	<iostream>
+	<cstring>
+
+1762900485 c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\archivoproducto.h
+	<string>
+	"Producto.h"
+
+1762900698 c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\producto.h
+	"fecha.h"
+
+1762894063 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\archivoproveedor.cpp
+	<cstring>
+	<iostream>
+	"proveedor.h"
+	"archivoProveedor.h"
+
+1762894063 c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\proveedor.h
+
+1762894063 c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\archivoproveedor.h
+	"proveedor.h"
+	<string>
+
+1762894063 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\archivoventa.cpp
+	<cstdio>
+	<cstring>
+	"ArchivoVenta.h"
+	"venta.h"
+
+1762894063 c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\archivoventa.h
+	"venta.h"
+
+1762894063 c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\venta.h
+	"fecha.h"
+
+1762894063 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\archivoventadetalle.cpp
+	<cstdio>
+	<cstring>
+	"ArchivoVentaDetalle.h"
+	"ventaDetalle.h"
+
+1762894063 c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\archivoventadetalle.h
+	"ventaDetalle.h"
+
+1762894063 c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\ventadetalle.h
+
+1762800811 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\compra.cpp
+	<string>
+	<iostream>
+	"compra.h"
+	"fecha.h"
+
+1762800811 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\compradetalle.cpp
+	<iostream>
+	"CompraDetalle.h"
+
+1762644368 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\fecha.cpp
+	<iostream>
+	"fecha.h"
+	<ctime>
+
+1762901935 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\main.cpp
+	<iostream>
+	"producto.h"
+	"ArchivoProducto.h"
+
+1762894063 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\marca.cpp
+	<cstring>
+	<iostream>
+	"marca.h"
+
+1762894063 c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\marca.h
+
+1762894063 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\menu.cpp
+	<iostream>
+	<cstdlib>
+
+1762904011 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\producto.cpp
+	<iostream>
+	<cstring>
+	"producto.h"
+	"funcionesGlobales.h"
+	"ArchivoProducto.h"
+
+1762894063 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\proveedor.cpp
+	"proveedor.h"
+	<cstring>
+
+1762894063 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\venta.cpp
+	<iostream>
+	<cstring>
+	"venta.h"
+
+1762894063 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\ventadetalle.cpp
+	<iostream>
+	"ventaDetalle.h"
+
+1762897900 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\funcionesglobales.cpp
+	<iostream>
+	"funcionesGlobales.h"
+
+1762897593 c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\funcionesglobales.h
+
