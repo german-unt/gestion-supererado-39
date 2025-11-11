@@ -5,9 +5,9 @@
 
 class ArchivoProducto{
 private:
-    std::string _nombreArchivo;
+    char _nombreArchivo[30];
 public:
-    ArchivoProducto(std::string nombreArchivo); //ok
+    ArchivoProducto(const char *nombreArchivo="ArchivoProducto.dat"); //ok
     int agregarRegistro(Producto nuevoRegistro); //ok
     int modificarRegistro(Producto nuevoRegistro, int idProducto); //ok
     int cantidadRegistros(); //ok

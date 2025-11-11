@@ -6,11 +6,11 @@ class ArchivoCompraDetalle{
 
 private:
 
-std::string _nombreArchivo;
+    char _nombreArchivo[30];
 
 public:
 
-ArchivoCompraDetalle(std::string nombreArchivo);
+ArchivoCompraDetalle(const char *nombreArchivo="ArchivoCompraDetalle.dat");
 int agregarRegistro(CompraDetalle detalle);
 bool listarPorCompra(int idCompra);
 int cantidadRegistros();

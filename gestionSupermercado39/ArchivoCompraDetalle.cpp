@@ -1,17 +1,16 @@
 #include <cstdio>
-#include <string>
+#include <cstring>
 #include "ArchivoCompraDetalle.h"
 
 
 
-
-ArchivoCompraDetalle::ArchivoCompraDetalle(std::string nombreArchivo){
-    _nombreArchivo = nombreArchivo;
+ArchivoCompraDetalle::ArchivoCompraDetalle(const char  *nombreArchivo){
+    std::strcpy(_nombreArchivo, nombreArchivo);
 }
 
 int ArchivoCompraDetalle::agregarRegistro(CompraDetalle nuevoRegistro){
 
-FILE *pArchivo = fopen(_nombreArchivo.c_str(), "ab");
+FILE *pArchivo = fopen(_nombreArchivo, "ab");
     if(pArchivo == nullptr){
         return -1;
     }
@@ -28,7 +27,7 @@ FILE *pArchivo = fopen(_nombreArchivo.c_str(), "ab");
 bool ArchivoCompraDetalle::listarPorCompra(int idCompra){
     CompraDetalle registroActual;
 
-    FILE *pArchivo = fopen(_nombreArchivo.c_str(), "rb");
+    FILE *pArchivo = fopen(_nombreArchivo, "rb");
     if(pArchivo ==  nullptr){
         return false;
     }
@@ -44,7 +43,7 @@ bool ArchivoCompraDetalle::listarPorCompra(int idCompra){
 
 int ArchivoCompraDetalle::cantidadRegistros(){
 
-    FILE *pArchivo = fopen(_nombreArchivo.c_str(), "rb");
+    FILE *pArchivo = fopen(_nombreArchivo, "rb");
     if(pArchivo == nullptr){
         return -1;
     }

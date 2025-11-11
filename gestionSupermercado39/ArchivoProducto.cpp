@@ -1,13 +1,15 @@
 
 #include "ArchivoProducto.h"
 #include "Producto.h"
+#include <iostream>
+#include <cstring>
 
-ArchivoProducto::ArchivoProducto(std::string nombreArchivo){
-    _nombreArchivo = nombreArchivo;
+ArchivoProducto::ArchivoProducto(const char  *nombreArchivo){
+    std::strcpy(_nombreArchivo, nombreArchivo);
 }
 
 int ArchivoProducto::agregarRegistro(Producto registro){
-    FILE *pArchivo = fopen(_nombreArchivo.c_str(), "ab");
+    FILE *pArchivo = fopen(_nombreArchivo, "ab");
 
     if(pArchivo==nullptr){
         return -1;
@@ -25,7 +27,7 @@ int ArchivoProducto::agregarRegistro(Producto registro){
 int ArchivoProducto::modificarRegistro(Producto registro, int idProducto){
     Producto registroActual;
 
-    FILE *pArchivo = fopen(_nombreArchivo.c_str(), "rb+");
+    FILE *pArchivo = fopen(_nombreArchivo, "rb+");
 
     if(pArchivo==nullptr){
         return -1;
@@ -46,7 +48,7 @@ int ArchivoProducto::modificarRegistro(Producto registro, int idProducto){
 
 
 int ArchivoProducto::cantidadRegistros(){
-    FILE *pArchivo = fopen(_nombreArchivo.c_str(), "rb");
+    FILE *pArchivo = fopen(_nombreArchivo, "rb");
         if(pArchivo==nullptr){
         return -1;
     }
@@ -61,7 +63,7 @@ int ArchivoProducto::cantidadRegistros(){
 
 bool ArchivoProducto::listar(){
     Producto registroActual;
-    FILE *pArchivo = fopen(_nombreArchivo.c_str(), "rb");
+    FILE *pArchivo = fopen(_nombreArchivo, "rb");
         if(pArchivo==nullptr){
         return false;
     }
@@ -75,7 +77,7 @@ bool ArchivoProducto::listar(){
 
 bool ArchivoProducto::eliminarLogico(int idProducto){
     Producto registroActual;
-        FILE *pArchivo = fopen(_nombreArchivo.c_str(), "rb+");
+        FILE *pArchivo = fopen(_nombreArchivo, "rb+");
         if(pArchivo==nullptr){
         return false;
     }
@@ -95,7 +97,7 @@ bool ArchivoProducto::eliminarLogico(int idProducto){
 
 bool ArchivoProducto::listarXnombre(){
     Producto registroActual;
-    FILE *pArchivo = fopen(_nombreArchivo.c_str(), "rb");
+    FILE *pArchivo = fopen(_nombreArchivo, "rb");
         if(pArchivo==nullptr){
         return false;
     }
@@ -109,7 +111,7 @@ bool ArchivoProducto::listarXnombre(){
 
 bool ArchivoProducto::listarXCategoria(){
     Producto registroActual;
-    FILE *pArchivo = fopen(_nombreArchivo.c_str(), "rb");
+    FILE *pArchivo = fopen(_nombreArchivo, "rb");
         if(pArchivo==nullptr){
         return false;
     }
@@ -123,7 +125,7 @@ bool ArchivoProducto::listarXCategoria(){
 
 bool ArchivoProducto::listarStock(){
         Producto registroActual;
-    FILE *pArchivo = fopen(_nombreArchivo.c_str(), "rb");
+    FILE *pArchivo = fopen(_nombreArchivo, "rb");
         if(pArchivo==nullptr){
         return false;
     }

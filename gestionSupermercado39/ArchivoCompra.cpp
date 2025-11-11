@@ -5,18 +5,18 @@
 #include "Compra.h"
 #include "ArchivoCompra.h"
 
-using namespace std;
 
 
-ArchivoCompra::ArchivoCompra(std::string nombreArchivo){
-    _nombreArchivo = nombreArchivo;
+
+ArchivoCompra::ArchivoCompra(const char *nombreArchivo){
+    std::strcpy(_nombreArchivo, nombreArchivo);
 }
 
 
 
 int ArchivoCompra::agregarRegistro(Compra nuevoRegistro){
 
-    FILE *pArchivo = fopen(_nombreArchivo.c_str(), "ab");
+    FILE *pArchivo = fopen(_nombreArchivo, "ab");
     if(pArchivo == nullptr){
         return -1;
     }
@@ -34,7 +34,7 @@ int ArchivoCompra::agregarRegistro(Compra nuevoRegistro){
 
 bool ArchivoCompra::listar(){
     Compra registro;
-    FILE *pArchivo = fopen(_nombreArchivo.c_str(), "rb");
+    FILE *pArchivo = fopen(_nombreArchivo, "rb");
     if(pArchivo == nullptr){
         return false;
     }
@@ -50,7 +50,7 @@ bool ArchivoCompra::listar(){
 
 int ArchivoCompra::modificarRegistro(Compra registro, int idCompra){
     Compra registroActual;
-    FILE *pArchivo = fopen(_nombreArchivo.c_str(), "rb+");
+    FILE *pArchivo = fopen(_nombreArchivo, "rb+");
         if(pArchivo == nullptr){
         return -1;
     }
@@ -69,7 +69,7 @@ int ArchivoCompra::modificarRegistro(Compra registro, int idCompra){
 
 int ArchivoCompra::cantidadRegistros(){
     Compra registroActual;
-        FILE *pArchivo = fopen(_nombreArchivo.c_str(), "rb");
+        FILE *pArchivo = fopen(_nombreArchivo, "rb");
         if(pArchivo == nullptr){
         return -1;
     }
@@ -83,7 +83,7 @@ int ArchivoCompra::cantidadRegistros(){
 
 bool ArchivoCompra::eliminarLogico(int idCompra){
         Compra registroActual;
-        FILE *pArchivo = fopen(_nombreArchivo.c_str(), "rb+");
+        FILE *pArchivo = fopen(_nombreArchivo, "rb+");
         if(pArchivo == nullptr){
         return false;
     }
@@ -105,7 +105,7 @@ bool ArchivoCompra::eliminarLogico(int idCompra){
 
 bool ArchivoCompra::listarComprasXProveedor(int CodigoProveedor){
     Compra registroActual;
-    FILE *pArchivo = fopen(_nombreArchivo.c_str(), "rb");
+    FILE *pArchivo = fopen(_nombreArchivo, "rb");
         if(pArchivo == nullptr){
         return false;
     }
@@ -125,7 +125,7 @@ bool ArchivoCompra::listarComprasXProveedor(int CodigoProveedor){
 
 bool ArchivoCompra::listarComprasXMes(int mes){
     Compra registroActual;
-    FILE *pArchivo = fopen(_nombreArchivo.c_str(), "rb");
+    FILE *pArchivo = fopen(_nombreArchivo, "rb");
         if(pArchivo == nullptr){
         return false;
     }
@@ -144,7 +144,7 @@ bool ArchivoCompra::listarComprasXMes(int mes){
 
 bool ArchivoCompra::listarComprasXAnio(int anio){
     Compra registroActual;
-    FILE *pArchivo = fopen(_nombreArchivo.c_str(), "rb");
+    FILE *pArchivo = fopen(_nombreArchivo, "rb");
         if(pArchivo == nullptr){
         return false;
     }

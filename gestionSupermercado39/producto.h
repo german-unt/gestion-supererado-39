@@ -1,7 +1,7 @@
 
 #pragma once
 
-class producto{
+class Producto{
 private:
   int idProducto;
   categoria idCategoria;
@@ -19,10 +19,10 @@ producto();
 
 //setters
 void setId(int s_idProducto);
-void setCategoria(categoria s-idCategoria);
+void setCategoria(categoria s_idCategoria);
 void setMarca(marca s_idMarca);
 void setPrecioUnitario(float s_precioUnitario);
-void setStock(int s_stock)
+void setStock(int s_stock);
 void setFecha(fecha s_fechaDeVencimiento);
 void setNombreProducto(const char *s_nombreProductoProdu);
 void setEliminado(bool s_eliminado);

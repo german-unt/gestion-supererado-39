@@ -34,10 +34,16 @@
 		</Compiler>
 		<Unit filename="ArchivoCompra.cpp" />
 		<Unit filename="ArchivoCompra.h" />
+		<Unit filename="ArchivoCompraDetalle.cpp" />
+		<Unit filename="ArchivoCompraDetalle.h" />
 		<Unit filename="ArchivoProducto.cpp" />
 		<Unit filename="ArchivoProducto.h" />
 		<Unit filename="ArchivoProveedor.cpp" />
 		<Unit filename="ArchivoProveedor.h" />
+		<Unit filename="ArchivoVenta.cpp" />
+		<Unit filename="ArchivoVenta.h" />
+		<Unit filename="ArchivoVentaDetalle.cpp" />
+		<Unit filename="ArchivoVentaDetalle.h" />
 		<Unit filename="categoria.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
@@ -46,6 +52,8 @@
 		</Unit>
 		<Unit filename="compra.cpp" />
 		<Unit filename="compra.h" />
+		<Unit filename="compraDetalle.cpp" />
+		<Unit filename="compraDetalle.h" />
 		<Unit filename="fecha.cpp" />
 		<Unit filename="fecha.h" />
 		<Unit filename="main.cpp" />

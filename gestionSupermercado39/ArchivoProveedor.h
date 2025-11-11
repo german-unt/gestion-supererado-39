@@ -6,10 +6,10 @@
 
 class ArchivoProveedor{
 private:
-    std::string _nombreArchivo;
+    char _nombreArchivo[30];
 
 public:
-    ArchivoProveedor(std::string nombreArchivo); //ok
+    ArchivoProveedor(const char *nombreArchivo="ArchivoProveedor.dat"); //ok
     int agregarRegistro(Proveedor registroNuevo); //ok
     bool listar(); //ok
     int modificarRegistro(Proveedor registro, int id); //ok

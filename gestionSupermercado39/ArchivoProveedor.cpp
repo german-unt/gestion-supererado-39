@@ -6,14 +6,14 @@ using namespace std;
 
 
 
-ArchivoProveedor::ArchivoProveedor(std::string nombreArchivo){
-    _nombreArchivo = nombreArchivo;
+ArchivoProveedor::ArchivoProveedor(const char  *nombreArchivo){
+    strcpy(_nombreArchivo, nombreArchivo);
 }
 
 
 int ArchivoProveedor::agregarRegistro(Proveedor registroNuevo){
 
-    FILE *pArchivo = fopen(_nombreArchivo.c_str(), "ab");
+    FILE *pArchivo = fopen(_nombreArchivo, "ab");
     if (pArchivo == nullptr){
         return -1;
     }
@@ -29,7 +29,7 @@ int ArchivoProveedor::agregarRegistro(Proveedor registroNuevo){
 
 bool ArchivoProveedor::listar(){
     Proveedor registro;
-    FILE *pArchivo = fopen(_nombreArchivo.c_str(), "rb");
+    FILE *pArchivo = fopen(_nombreArchivo, "rb");
     if (pArchivo == nullptr){
         return false;
     }
@@ -44,7 +44,7 @@ bool ArchivoProveedor::listar(){
 
 int ArchivoProveedor::modificarRegistro(Proveedor registro, int id){
     Proveedor registroActual;
-    FILE *pArchivo = fopen(_nombreArchivo.c_str(), "rb+");
+    FILE *pArchivo = fopen(_nombreArchivo, "rb+");
     if (pArchivo == nullptr){
         return -1;
     }
@@ -64,7 +64,7 @@ int ArchivoProveedor::modificarRegistro(Proveedor registro, int id){
 int ArchivoProveedor::cantidadRegistros(){
     Proveedor registro;
 
-    FILE *pArchivo = fopen(_nombreArchivo.c_str(), "rb");
+    FILE *pArchivo = fopen(_nombreArchivo, "rb");
     if (pArchivo == nullptr){
         return -1;
     }
@@ -80,7 +80,7 @@ bool ArchivoProveedor::eliminar(int id){
 
 bool modificado = false;
 Proveedor registroActual;
-    FILE *pArchivo = fopen(_nombreArchivo.c_str(), "rb+");
+    FILE *pArchivo = fopen(_nombreArchivo, "rb+");
     if (pArchivo == nullptr){
         return false;
     }
@@ -100,7 +100,7 @@ Proveedor registroActual;
 
 bool ArchivoProveedor::listarXnombre(){
 
-    FILE *pArchivo = fopen(_nombreArchivo.c_str(), "rb");
+    FILE *pArchivo = fopen(_nombreArchivo, "rb");
     if (pArchivo == nullptr){
         return false;
     }
