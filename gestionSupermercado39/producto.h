@@ -1,5 +1,6 @@
 
 #pragma once
+#include "fecha.h"
 
 class Producto{
 private:
@@ -10,10 +11,10 @@ private:
   int _stock;
   char _nombreProducto [20];
   bool _eliminado;
-
+  Fecha _fechaDeVencimiento;
 
 public:
-Producto(int idProducto, int idCategoria,int idMarca, float precioUnitario, int stock, const char *nombreProducto, bool eliminado);
+Producto(int idProducto, int idCategoria,int idMarca, float precioUnitario, int stock, const char *nombreProducto, bool eliminado, Fecha _fechaDeVencimiento);
 Producto();
 
 //setters
@@ -24,7 +25,7 @@ void setPrecioUnitario(float precioUnitario);
 void setStock(int stock);
 void setNombreProducto(const char *nombreProductoProdu);
 void setEliminado(bool eliminado);
-
+void setFechaDeVencimiento(Fecha fechaDeVencimiento);
 //getters
 int getIdProducto();
 int getIdCategoria();
@@ -33,12 +34,14 @@ float getPrecioUnitario();
 int getStock();
 const char *getNombreProducto();
 bool getEliminado();
+Fecha getFechaDeVencimiento();
 
-
-void cargarProducto();
-void mostrarProducto();
+Producto cargarProducto();
+void mostrarProducto(Producto producto);
+void mostrarTodos();
 
 };
+
 
 
 

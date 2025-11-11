@@ -2,11 +2,13 @@
 #include <iostream>
 #include <cstring>
 #include "producto.h"
+#include "funcionesGlobales.h"
+#include"ArchivoProducto.h"
 
 using namespace std;
 
 // Constructor con parámetros
-Producto::Producto(int idProducto, int idCategoria, int idMarca, float precioUnitario, int stock, const char *nombreProducto, bool eliminado) {
+Producto::Producto(int idProducto, int idCategoria, int idMarca, float precioUnitario, int stock, const char *nombreProducto, bool eliminado, Fecha fechaDeVencimiento) {
     _idProducto = idProducto;
     _idCategoria = idCategoria;
     _idMarca = idMarca;
@@ -14,6 +16,7 @@ Producto::Producto(int idProducto, int idCategoria, int idMarca, float precioUni
     _stock = stock;
     strcpy(_nombreProducto, nombreProducto);
     _eliminado = eliminado;
+    _fechaDeVencimiento = fechaDeVencimiento;
 }
 
 // Constructor por defecto
@@ -25,6 +28,7 @@ Producto::Producto() {
     _stock = 0;
     strcpy(_nombreProducto, "");
     _eliminado = false;
+    _fechaDeVencimiento = Fecha();
 }
 
 // Setters
@@ -56,6 +60,10 @@ void Producto::setEliminado(bool eliminado) {
     _eliminado = eliminado;
 }
 
+void Producto::setFechaDeVencimiento(Fecha fechaDeVencimiento){
+     _fechaDeVencimiento = fechaDeVencimiento;
+}
+
 // Getters
 int Producto::getIdProducto() {
     return _idProducto;
@@ -85,39 +93,82 @@ bool Producto::getEliminado() {
     return _eliminado;
 }
 
-// Métodos auxiliares
-void Producto::cargarProducto() {
-    cout << "ID producto: ";
-    cin >> _idProducto;
-
-    cout << "ID categoria: ";
-    cin >> _idCategoria;
-
-    cout << "ID marca: ";
-    cin >> _idMarca;
-
-    cout << "Precio unitario: ";
-    cin >> _precioUnitario;
-
-    cout << "Stock: ";
-    cin >> _stock;
-
-    cin.ignore(); // limpia el enter que quedó
-
-    cout << "Nombre del producto: ";
-    cin.getline(_nombreProducto, 20);
-
-    _eliminado = false;
+Fecha Producto::getFechaDeVencimiento(){
+    return _fechaDeVencimiento;
 }
 
-void Producto::mostrarProducto() {
+// Métodos auxiliares
+Producto Producto::cargarProducto() {
+    ArchivoProducto archiP("ArchivoProducto.dat");
+    Producto producto;
+    int idProducto;
+    int idCategoria;
+    int  idMarca;
+    float precioUnitario;
+    int stock;
+    char nombreProducto [20];
+    bool eliminado;
+    Fecha fechaDeVencimiento;
+
+    idProducto = archiP.cantidadRegistros()+1;
+    producto.setIdProducto(idProducto);
+
+    cout << "ID categoria: ";
+    cin >> idCategoria;
+    producto.setIdCategoria(idCategoria);
+
+    cout << "ID marca: ";
+    cin >> idMarca;
+    producto.setIdMarca(idMarca);
+
+
+    cout << "Precio unitario: ";
+    cin >> precioUnitario;
+    producto.setPrecioUnitario(precioUnitario);
+
+    cout << "Stock: ";
+    cin >> stock;
+    producto.setStock(stock);
+
+    cout << "Nombre del producto: ";
+    cargarCadena(nombreProducto,19);
+    producto.setNombreProducto(nombreProducto);
+
+    eliminado = false;
+    producto.setEliminado(eliminado);
+
+    cout <<"Fecha de vencimiento: "<<endl;
+    fechaDeVencimiento.Cargar();
+    producto.setFechaDeVencimiento(fechaDeVencimiento);
+
+    return producto;
+
+}
+
+void Producto::mostrarProducto(Producto producto) {
     cout << endl;
-    cout << "ID Producto: " << _idProducto << endl;
-    cout << "ID Categoria: " << _idCategoria << endl;
-    cout << "ID Marca: " << _idMarca << endl;
-    cout << "Precio Unitario: $" << _precioUnitario << endl;
-    cout << "Stock: " << _stock << endl;
-    cout << "Nombre: " << _nombreProducto << endl;
-    cout << "Eliminado: " << (_eliminado ? "Si" : "No") << endl;
+    cout << "ID Producto: " << producto.getIdProducto() << endl;
+    cout << "ID Categoria: " << producto.getIdCategoria()<< endl;
+    cout << "ID Marca: " << producto.getIdMarca() << endl;
+    cout << "Precio Unitario: $" << producto.getPrecioUnitario() << endl;
+    cout << "Stock: " << producto.getStock() << endl;
+    cout << "Nombre: " << producto.getNombreProducto() << endl;
+    if(producto.getEliminado()){
+        cout << "Estado: Eliminado" << endl;
+    }else{
+        cout <<"Estado: Activo" << endl;
+    }
+    cout << "Fecha de vencimiento: " << producto.getFechaDeVencimiento().toString()<< endl;
     cout << "**************************************************"  <<endl;
+}
+
+void Producto::mostrarTodos(){
+    ArchivoProducto archi("ArchivoProducto.dat");
+    Producto producto;
+    for(int i = 0; i < archi.cantidadRegistros(); i++){
+        producto = archi.leer(i);
+        mostrarProducto(producto);
+    }
+    system("pause");
+
 }
