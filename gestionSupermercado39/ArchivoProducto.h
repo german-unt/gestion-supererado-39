@@ -16,6 +16,7 @@ public:
     bool listarXnombre();
     bool listarXCategoria();
     bool listarStock();
+    Producto leer(int numero);
 
 
 };

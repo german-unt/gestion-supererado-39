@@ -61,7 +61,7 @@ int ArchivoProducto::cantidadRegistros(){
 }
 
 
-bool ArchivoProducto::listar(){
+/*bool ArchivoProducto::listar(){
     Producto registroActual;
     FILE *pArchivo = fopen(_nombreArchivo, "rb");
         if(pArchivo==nullptr){
@@ -74,6 +74,7 @@ bool ArchivoProducto::listar(){
     fclose(pArchivo);
     return true;
 }
+*/
 
 bool ArchivoProducto::eliminarLogico(int idProducto){
     Producto registroActual;
@@ -108,6 +109,20 @@ bool ArchivoProducto::listarXnombre(){
     fclose(pArchivo);
     return true;
 }
+
+Producto ArchivoProducto::leer(int numero)
+ {
+   FILE *p = fopen(_nombreArchivo, "rb");
+   if (p==nullptr)
+   {
+     return Producto();
+   }
+   Producto aux;
+   fseek(p,numero*sizeof(Producto), 0);
+   fread(&aux, sizeof(Producto), 1,p);
+   fclose(p);
+   return aux;
+ }
 /*
 bool ArchivoProducto::listarXCategoria(){
     Producto registroActual;
