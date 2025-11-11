@@ -1,19 +1,18 @@
-#ifndef PROVEEDOR_H_INCLUDED
-#define PROVEEDOR_H_INCLUDED
-class proveedor{
+#pragma once
+class Proveedor{
 private:
-int idProveedor;
-char nombre [20];
-bool eliminado;
+int _idProveedor;
+char _nombre [20];
+bool _eliminado;
 
-public
-proveedor (int idproveedor, const char *nombre, bool eliminado);
-proveedor ();
+public:
+Proveedor (int idproveedor, const char *nombre, bool eliminado);
+Proveedor ();
 
 //setters
-void setIdProveedor (int s_idProveedor);
-void setNombre (const char *s_nombre);
-void setEliminado (bool s_eliminado);
+void setIdProveedor (int idProveedor);
+void setNombre (const char *nombre);
+void setEliminado (bool eliminado);
 
 //getters
 int getIdProveedor();
@@ -24,4 +23,3 @@ bool getEliminado();
 };
 
 
-#endif // PROVEEDOR_H_INCLUDED

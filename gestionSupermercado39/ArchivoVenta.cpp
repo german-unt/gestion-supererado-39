@@ -32,7 +32,7 @@ bool ArchivoVenta::listar(){
 
     while(fread(&registroActual,sizeof(Venta),1,pArchivo)==1){
         if(registroActual.getEstado()){
-            registroActual.mostrar();
+            registroActual.mostrarVenta();
         }
     }
     fclose(pArchivo);
@@ -47,7 +47,7 @@ int ArchivoVenta::modificarRegistro(Venta registro, int idVenta){
     }
     int modificado = 0;
     while(fread(&registroActual,sizeof(Venta),1,pArchivo)==1){
-        if(registroActual.getId() == idVenta){
+        if(registroActual.getIdVenta() == idVenta){
             fseek(pArchivo, -sizeof(Venta), SEEK_CUR);
             modificado = fwrite(&registro,sizeof(Venta),1,pArchivo);
             break;
@@ -83,7 +83,7 @@ bool ArchivoVenta::eliminarLogico(int idVenta){
     }
     int modificado = 0;
     while(fread(&registroActual,sizeof(Venta),1,pArchivo)==1){
-        if(registroActual.getId()== idVenta){
+        if(registroActual.getIdVenta()== idVenta){
             fseek(pArchivo,-sizeof(Venta), SEEK_CUR);
             registroActual.setEstado(false);
             modificado = fwrite(&registroActual,sizeof(Venta),1,pArchivo);

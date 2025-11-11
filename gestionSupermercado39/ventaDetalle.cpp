@@ -4,21 +4,21 @@ using namespace std;
 
 
 
-void ventaDetalle::setIdVenta(int idVenta){_idVenta = idVenta;}
-void ventaDetalle::setIdProducto(int idProducto){_idProducto = idProducto;}
-void ventaDetalle::setCantidad(int cantidad){_cantidad = cantidad;}
-void ventaDetalle::setPrecioUnitario(float precio){_precioUnitario = precio;}
-void ventaDetalle::setSubtotal(){_subtotal = _precioUnitario * _cantidad;}
+void VentaDetalle::setIdVenta(int idVenta){_idVenta = idVenta;}
+void VentaDetalle::setIdProducto(int idProducto){_idProducto = idProducto;}
+void VentaDetalle::setCantidad(int cantidad){_cantidad = cantidad;}
+void VentaDetalle::setPrecioUnitario(float precio){_precioUnitario = precio;}
+void VentaDetalle::setSubtotal(){_subtotal = _precioUnitario * _cantidad;}
 
 
-int ventaDetalle::getIdVenta(){return _idVenta; }
-int ventaDetalle::getIdProducto(){return _idProducto; }
-int ventaDetalle::getCantidad(){return _cantidad; }
-float ventaDetalle::getPrecioUnitario(){return _precioUnitario; }
-float ventaDetalle::getSubtotal(){return _subtotal; }
+int VentaDetalle::getIdVenta(){return _idVenta; }
+int VentaDetalle::getIdProducto(){return _idProducto; }
+int VentaDetalle::getCantidad(){return _cantidad; }
+float VentaDetalle::getPrecioUnitario(){return _precioUnitario; }
+float VentaDetalle::getSubtotal(){return _subtotal; }
 
 
-void ventaDetalle::mostrarVentaDetalle(){
+void VentaDetalle::mostrarVentaDetalle(){
     cout << "ID VENTA: " << getIdVenta() << endl;
     cout << "ID PRODUCTO: " << getIdProducto() << endl;
     cout << "PRECIO UNITARIO: " << getPrecioUnitario() << endl;

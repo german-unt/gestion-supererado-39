@@ -36,7 +36,7 @@ bool ArchivoProveedor::listar(){
 
     while(fread(&registro, sizeof (Proveedor),1,pArchivo) == 1){
             //poner mostarProveedor;
-        cout << registro.getIdProveedor() << " - " << registro.getNombre() << " - " << registro.getEstado()<< endl;
+        cout << registro.getIdProveedor() << " - " << registro.getNombre() << " - " << registro.getEliminado()<< endl;
     }
     fclose(pArchivo);
     return true;
@@ -88,7 +88,7 @@ Proveedor registroActual;
     while(fread(&registroActual, sizeof (Proveedor),1,pArchivo) == 1){
         if(registroActual.getIdProveedor() == id){
             fseek(pArchivo,-sizeof(Proveedor), SEEK_CUR);
-            registroActual.setEstado(false);
+            registroActual.setEliminado(false);
             modificado = fwrite(&registroActual,sizeof(Proveedor),1,pArchivo) ? true : false;
             break;
         }
@@ -117,7 +117,7 @@ bool ArchivoProveedor::listarXnombre(){
     Proveedor registroActual;
 
      while (fread(&registroActual, sizeof(Proveedor), 1, pArchivo) == 1) {
-        if (registroActual.getEstado()) { // solo los activos
+        if (registroActual.getEliminado()) { // solo los activos
             lista[cantidad] = registroActual;
             cantidad++;
         }
@@ -132,7 +132,7 @@ bool ArchivoProveedor::listarXnombre(){
 
     for (int i = 0; i < cantidad - 1; i++) {
         for (int j = i + 1; j < cantidad; j++) {
-            if (strcmp(lista[i].getNombre().c_str(), lista[j].getNombre().c_str()) > 0) {
+            if (strcmp(lista[i].getNombre(), lista[j].getNombre()) > 0) {
                 Proveedor aux = lista[i];
                 lista[i] = lista[j];
                 lista[j] = aux;
@@ -143,7 +143,7 @@ bool ArchivoProveedor::listarXnombre(){
     for (int i = 0; i < cantidad; i++) {
         cout << lista[i].getIdProveedor() << " - "
              << lista[i].getNombre() << " - "
-             << (lista[i].getEstado() ? "Activo" : "Eliminado")
+             << (lista[i].getEliminado() ? "Activo" : "Eliminado")
              << endl;
     }
 

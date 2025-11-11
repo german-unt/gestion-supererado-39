@@ -1,24 +1,27 @@
-#ifndef MARCA_H_INCLUDED
-#define MARCA_H_INCLUDED
-class marca{
+#pragma once
+
+class Marca {
 private:
-    int idMarca;
-    char nombre[20];
-    bool eliminado;
+    int _idMarca;
+    char _nombre[20];
+    bool _eliminado;
+
 public:
-    marca(int idMarca, const char *nombre, bool eliminado);
-    marca();
-//setters
-void setIdMarca (int s_idMarca);
-void setNombre (const char *s_nombre);
-void setEliminado (bool s_eliminado);
+    // Constructores
+    Marca(int idMarca, const char *nombre, bool eliminado);
+    Marca();
 
-//getters
-int getIdMarca();
-const char *getNombre();
-bool getELiminado();
+    // Setters
+    void setIdMarca(int idMarca);
+    void setNombre(const char *nombre);
+    void setEliminado(bool eliminado);
 
+    // Getters
+    int getIdMarca();
+    const char *getNombre();
+    bool getEliminado();
+
+    // Métodos auxiliares
+    void cargarMarca();
+    void mostrarMarca();
 };
-
-
-#endif // MARCA_H_INCLUDED

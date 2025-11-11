@@ -1,0 +1,121 @@
+# depslib dependency file v1.0
+1762806029 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\archivocompra.cpp
+	<iostream>
+	<cstring>
+	"Compra.h"
+	"ArchivoCompra.h"
+
+1762760838 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\compra.h
+	<string>
+	"fecha.h"
+
+1762752159 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\fecha.h
+	<string>
+
+1762805219 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\archivocompra.h
+	<string>
+	"Compra.h"
+
+1762809991 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\archivocompradetalle.cpp
+	<cstdio>
+	<cstring>
+	"ArchivoCompraDetalle.h"
+
+1762805808 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\archivocompradetalle.h
+	<string>
+	"compraDetalle.h"
+
+1762757307 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\compradetalle.h
+
+1762820815 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\archivoventadetalle.cpp
+	<cstdio>
+	<cstring>
+	"ArchivoVentaDetalle.h"
+	"ventaDetalle.h"
+
+1762820685 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\archivoventadetalle.h
+	"ventaDetalle.h"
+
+1762820815 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\ventadetalle.h
+
+1762760838 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\compra.cpp
+	<string>
+	<iostream>
+	"compra.h"
+	"fecha.h"
+
+1762757307 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\compradetalle.cpp
+	<iostream>
+	"CompraDetalle.h"
+
+1762670838 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\fecha.cpp
+	<iostream>
+	"fecha.h"
+	<ctime>
+
+1762670838 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\main.cpp
+	<iostream>
+
+1762830064 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\marca.cpp
+	<cstring>
+	<iostream>
+	"marca.h"
+
+1762830730 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\producto.cpp
+	<iostream>
+	<cstring>
+	"producto.h"
+
+1762827930 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\proveedor.cpp
+	"proveedor.h"
+	<cstring>
+
+1762829703 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\venta.cpp
+	<iostream>
+	<cstring>
+	"venta.h"
+
+1762827876 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\proveedor.h
+
+1762828966 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\ventadetalle.cpp
+	<iostream>
+	"ventaDetalle.h"
+
+1762828904 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\archivoventa.cpp
+	<cstdio>
+	<cstring>
+	"ArchivoVenta.h"
+	"venta.h"
+
+1762809609 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\archivoventa.h
+	"venta.h"
+
+1762829622 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\venta.h
+	"fecha.h"
+
+1762830064 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\marca.h
+
+1762830547 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\archivoproducto.cpp
+	"ArchivoProducto.h"
+	"Producto.h"
+	<iostream>
+	<cstring>
+
+1762805808 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\archivoproducto.h
+	<string>
+	"Producto.h"
+
+1762830769 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\producto.h
+
+1762830064 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\categoria.h
+
+1762830164 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\archivoproveedor.cpp
+	<cstring>
+	<iostream>
+	"proveedor.h"
+	"archivoProveedor.h"
+
+1762805439 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\archivoproveedor.h
+	"proveedor.h"
+	<string>
+

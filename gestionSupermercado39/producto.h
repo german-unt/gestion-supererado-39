@@ -3,40 +3,40 @@
 
 class Producto{
 private:
-  int idProducto;
-  categoria idCategoria;
-  marca idMarca;
-  float precioUnitario;
-  int stock;
-  Fecha fechaDeVencimiento;
-  char nombreProducto [20];
-  bool eliminado;
+  int _idProducto;
+  int _idCategoria;
+  int  _idMarca;
+  float _precioUnitario;
+  int _stock;
+  char _nombreProducto [20];
+  bool _eliminado;
 
 
 public:
-producto(int idProducto, categoria idCategoria,marca idMarca, float precioUnitario, int stock, Fecha fechaDeVencimiento, const char *nombreProducto, bool eliminado);
-producto();
+Producto(int idProducto, int idCategoria,int idMarca, float precioUnitario, int stock, const char *nombreProducto, bool eliminado);
+Producto();
 
 //setters
-void setId(int s_idProducto);
-void setCategoria(categoria s_idCategoria);
-void setMarca(marca s_idMarca);
-void setPrecioUnitario(float s_precioUnitario);
-void setStock(int s_stock);
-void setFecha(fecha s_fechaDeVencimiento);
-void setNombreProducto(const char *s_nombreProductoProdu);
-void setEliminado(bool s_eliminado);
+void setIdProducto(int idProducto);
+void setIdCategoria(int idCategoria);
+void setIdMarca(int idMarca);
+void setPrecioUnitario(float precioUnitario);
+void setStock(int stock);
+void setNombreProducto(const char *nombreProductoProdu);
+void setEliminado(bool eliminado);
 
 //getters
 int getIdProducto();
-categoria getIdCategoria();
-marca getIdCategoria();
+int getIdCategoria();
+int getIdMarca();
 float getPrecioUnitario();
 int getStock();
-Fecha getFechaDeVencimiento();
 const char *getNombreProducto();
 bool getEliminado();
 
+
+void cargarProducto();
+void mostrarProducto();
 
 };
 

@@ -67,6 +67,8 @@
 		<Unit filename="proveedor.h" />
 		<Unit filename="venta.cpp" />
 		<Unit filename="venta.h" />
+		<Unit filename="ventaDetalle.cpp" />
+		<Unit filename="ventaDetalle.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

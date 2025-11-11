@@ -1,26 +1,31 @@
-#ifndef CATEGORIA_H_INCLUDED
-#define CATEGORIA_H_INCLUDED
-class categoria{
+#pragma once
+
+
+
+
+class Categoria{
 private:
-int idCategoria;
-char nombre[20];
-bool eliminado;
+    int _idCategoria;
+    char _nombre[20];
+    bool _eliminado;
 
 public:
-categoria(int idCategoria, const char *nombre, bool eliminado);
-categoria();
-//setters
-void setIdCategoria(int s_idCategoria);
-void setNombre (const char *s_nombre);
-void setEliminado (bool s_eliminado);
+    Categoria(int idCategoria, const char *nombre, bool eliminado);
+    Categoria();
+    //setters
+    void setIdCategoria(int idCategoria);
+    void setNombre (const char *nombre);
+    void setEliminado (bool eliminado);
 
-//getters
-int getIdCategoria();
-const char *getNombre();
-bool getEliminado();
+    //getters
+    int getIdCategoria();
+    const char *getNombre();
+    bool getEliminado();
+
+    void cargarCategoria();
+    void mostrarCategoria();
 
 };
 
 
 
-#endif // CATEGORIA_H_INCLUDED
