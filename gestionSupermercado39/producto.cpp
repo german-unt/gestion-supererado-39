@@ -87,23 +87,31 @@ bool Producto::getEliminado() {
 
 // Métodos auxiliares
 void Producto::cargarProducto() {
-    cout << "Ingrese ID de producto: ";
+    cout << "ID producto: ";
     cin >> _idProducto;
-    cout << "Ingrese ID de categoria: ";
+
+    cout << "ID categoria: ";
     cin >> _idCategoria;
-    cout << "Ingrese ID de marca: ";
+
+    cout << "ID marca: ";
     cin >> _idMarca;
-    cout << "Ingrese precio unitario: ";
+
+    cout << "Precio unitario: ";
     cin >> _precioUnitario;
-    cout << "Ingrese stock: ";
+
+    cout << "Stock: ";
     cin >> _stock;
-    cin.ignore();
-    cout << "Ingrese nombre del producto: ";
+
+    cin.ignore(); // limpia el enter que quedó
+
+    cout << "Nombre del producto: ";
     cin.getline(_nombreProducto, 20);
+
     _eliminado = false;
 }
 
 void Producto::mostrarProducto() {
+    cout << endl;
     cout << "ID Producto: " << _idProducto << endl;
     cout << "ID Categoria: " << _idCategoria << endl;
     cout << "ID Marca: " << _idMarca << endl;
@@ -111,4 +119,5 @@ void Producto::mostrarProducto() {
     cout << "Stock: " << _stock << endl;
     cout << "Nombre: " << _nombreProducto << endl;
     cout << "Eliminado: " << (_eliminado ? "Si" : "No") << endl;
+    cout << "**************************************************"  <<endl;
 }

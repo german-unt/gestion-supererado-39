@@ -1,8 +1,8 @@
 #include <iostream>
 #include <cstdlib>  // Para system()
 using namespace std;
-
-int main() {
+/*
+int menu() {
     int opcionPrincipal, opcionSubmenu;
 
     do {
@@ -98,3 +98,4 @@ int main() {
     return 0;
 }
 
+*/

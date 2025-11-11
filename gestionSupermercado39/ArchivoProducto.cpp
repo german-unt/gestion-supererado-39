@@ -69,7 +69,7 @@ bool ArchivoProducto::listar(){
     }
 
     while(fread(&registroActual,sizeof(Producto),1,pArchivo)==1){
-        registroActual.getNombreProducto(); // aca va registroActual.Mostrar()
+        registroActual.mostrarProducto(); // aca va registroActual.Mostrar()
     }
     fclose(pArchivo);
     return true;
@@ -85,7 +85,7 @@ bool ArchivoProducto::eliminarLogico(int idProducto){
     while(fread(&registroActual,sizeof(Producto),1,pArchivo)==1){
           if(registroActual.getIdProducto()== idProducto){
             fseek(pArchivo,-sizeof(Producto), SEEK_CUR);
-            registroActual.setEliminado(false);
+            registroActual.setEliminado(true);
             modificado = fwrite(&registroActual,sizeof(Producto),1,pArchivo) ? true : false;
             break;
           }
