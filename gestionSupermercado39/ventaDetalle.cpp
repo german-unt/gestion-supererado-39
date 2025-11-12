@@ -4,10 +4,37 @@ using namespace std;
 
 
 
-void VentaDetalle::setIdVenta(int idVenta){_idVenta = idVenta;}
-void VentaDetalle::setIdProducto(int idProducto){_idProducto = idProducto;}
-void VentaDetalle::setCantidad(int cantidad){_cantidad = cantidad;}
-void VentaDetalle::setPrecioUnitario(float precio){_precioUnitario = precio;}
+void VentaDetalle::setIdVenta(int idVenta){
+    while(idVenta < 0){
+        cout << "ID INVALIDO, POT FAVOR INGRESAR OTRO: ";
+        cin >> idVenta;
+    }
+    _idVenta = idVenta;
+}
+
+void VentaDetalle::setIdProducto(int idProducto){
+    while(idProducto < 0){
+        cout << "ID INVALIDO, POT FAVOR INGRESAR OTRO: ";
+        cin >> idProducto;
+    }
+    _idProducto = idProducto;
+}
+void VentaDetalle::setCantidad(int cantidad){
+    while(cantidad < 0){
+        cout << "CANTIDAD INVALIDA, POT FAVOR INGRESAR OTRA: ";
+        cin >> cantidad;
+    }
+    _cantidad = cantidad;
+}
+
+void VentaDetalle::setPrecioUnitario(float precio){
+    while(precio < 0){
+        cout << "PRECIO INVALIDO, POT FAVOR INGRESAR OTRO: ";
+        cin >> precio;
+    }
+    _precioUnitario = precio;
+}
+
 void VentaDetalle::setSubtotal(){_subtotal = _precioUnitario * _cantidad;}
 
 

@@ -1,13 +1,13 @@
 
 #include <iostream>
-#include <csting>
+#include <cstring>
 
 #include "categoria.h"
 using namespace std;
 
 
 Categoria::Categoria(int idCategoria, const char *nombre, bool eliminado) {
-    _idCategoria = idCategoria;
+    setIdCategoria(idCategoria);
     strcpy(_nombre, nombre);
     _eliminado = eliminado;
 }
@@ -19,6 +19,10 @@ Categoria::Categoria() {
 }
 
 void Categoria::setIdCategoria(int idCategoria) {
+        while(idCategoria < 0){
+        cout >> "ID INVALIDO, INGRESE OTRO ID: ";
+        cin >> idCategoria;
+    }
     _idCategoria = idCategoria;
 }
 

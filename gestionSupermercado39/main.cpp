@@ -30,6 +30,8 @@ int main() {
             system("cls");
             menuVenta();
             break;
+        default: cout << "Opcion no valida" <<endl;
+        system ("pause");
         }
         cout << endl;
         system("cls");

@@ -1,9 +1,12 @@
-#include "proveedor.h"
+#include <iostream>
 #include <cstring>
+#include "proveedor.h"
+
+using namespace std;
 
 
 Proveedor::Proveedor(int idProveedor, const char *nombre, bool eliminado) {
-    _idProveedor = idProveedor;
+    setIdProveedor(idProveedor);
     strcpy(_nombre, nombre);   // copia el texto al array
     _eliminado = eliminado;
 }
@@ -17,6 +20,10 @@ Proveedor::Proveedor() {
 
 // Setters
 void Proveedor::setIdProveedor(int idProveedor) {
+    while (idProveedor < 0){
+        cout << "El ID debe es invalido, igrese otro: ";
+        cin >> idProveedor;
+    }
     _idProveedor = idProveedor;
 }
 

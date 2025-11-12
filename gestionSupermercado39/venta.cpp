@@ -5,15 +5,36 @@
 using namespace std;
 
 
-void Venta::setIdVenta(int idVenta){ _idVenta = idVenta; }
-void Venta::setIdVendedor(int idVendedor){ _idVendedor = idVendedor; }
+void Venta::setIdVenta(int idVenta){
+    while (idVenta < 0 ){
+        cout << "ID INVALIDO, INGRESE OTRO ID: ";
+        cin >> idVenta;
+    }
+     _idVenta = idVenta;
+}
+
+void Venta::setIdVendedor(int idVendedor){
+    while (idVendedor < 0 ){
+        cout << "ID INVALIDO, INGRESE OTRO ID: ";
+        cin >> idVendedor;
+    }
+     _idVendedor = idVendedor;
+}
+
+
 void Venta::setFecha(int dia, int mes, int anio){
     _fecha.setDia(dia);
     _fecha.setMes(mes);
     _fecha.setAnio(anio);
 }
-void Venta::setTotal(float total){ _total = total;}
-void Venta::setEstado(bool estado){ _anulada = estado;}
+
+void Venta::setTotal(float total){
+     _total = total;}
+void Venta::setEstado(bool estado){
+     _anulada = estado;}
+
+
+
 
 ///getters
 int Venta::getIdVenta(){return _idVenta;}
@@ -48,28 +69,6 @@ void Venta::mostrarTodos(){
     system("pause");
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-///
-
 Venta Venta::cargarVenta(){
     Venta venta;
 
@@ -86,7 +85,7 @@ Venta Venta::cargarVenta(){
     cin >> idVendedor;
     venta.setIdVendedor(idVendedor);
 
-    cout << "Fecha: ";
+    cout << "Fecha: " << endl;
     fecha.Cargar();
 
     venta.setTotal(0);

@@ -4,14 +4,34 @@
 #include "fecha.h"
 using namespace std;
 
-void Compra::setIdCompra(int idCompra){_idCompra = idCompra;    }
-void Compra::setIdProveedor(int idProveedor){_idProveedor = idProveedor;    }
+void Compra::setIdCompra(int idCompra){
+    while (idCompra < 0){
+        cout << "ID INVALIDO, POR FAVOR INGRESE OTRO: ";
+        cin >> idCompra;
+    }
+    _idCompra = idCompra;
+}
+
+
+void Compra::setIdProveedor(int idProveedor){
+        while (idProveedor < 0){
+        cout << "ID INVALIDO, POR FAVOR INGRESE OTRO: ";
+        cin >> idProveedor;
+    }
+    _idProveedor = idProveedor;
+}
+
+
 void Compra::setFecha(int dia, int mes, int anio){
     _fecha.setDia(dia);
     _fecha.setMes(mes);
     _fecha.setAnio(anio);
 }
+
+
 void Compra::setTotal(float total){_total = total;  }
+
+
 void Compra::setEstado(bool estado){_anulada  = estado; }
 
 ///getters

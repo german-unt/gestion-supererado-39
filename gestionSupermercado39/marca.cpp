@@ -19,6 +19,10 @@ Marca::Marca() {
 
 // Setters
 void Marca::setIdMarca(int idMarca) {
+    while(idMarca < 0){
+        cout << "ID INVALIDO, INGRESE OTRO ID: ";
+        cin >> idMarca;
+    }
     _idMarca = idMarca;
 }
 

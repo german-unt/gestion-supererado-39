@@ -33,22 +33,44 @@ Producto::Producto() {
 
 // Setters
 void Producto::setIdProducto(int idProducto) {
+    while (idProducto < 0 ){
+        cout << "El id debe ser positivo, ingrese nuevamente el id: ";
+        cin >> idProducto;
+
+    }
     _idProducto = idProducto;
 }
 
 void Producto::setIdCategoria(int idCategoria) {
+    while (idCategoria < 0 ){
+        cout << "El id debe ser positivo, ingrese nuevamente el id: ";
+        cin >> idCategoria;
+
+    }
     _idCategoria = idCategoria;
 }
 
 void Producto::setIdMarca(int idMarca) {
+    while (idMarca < 0 ){
+        cout << "El id debe ser positivo, ingrese nuevamente el id: ";
+        cin >> idMarca;
+    }
     _idMarca = idMarca;
 }
 
 void Producto::setPrecioUnitario(float precioUnitario) {
+    while (precioUnitario < 1 ){
+        cout << "El precio debe ser mayor que 0, ingrese nuevamente el precio: ";
+        cin >> precioUnitario;
+    }
     _precioUnitario = precioUnitario;
 }
 
 void Producto::setStock(int stock) {
+    while (stock < 0 ){
+        cout << "El stock es invalido, ingrese nuevamente el stock: ";
+        cin >> stock;
+    }
     _stock = stock;
 }
 

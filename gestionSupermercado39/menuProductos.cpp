@@ -1,6 +1,4 @@
 #include <iostream>
-//#include "producto.h"
-//#include "ArchivoProducto.h"
 #include "menuProductos.h"
 
 
@@ -58,6 +56,7 @@ void menuProductos() {
             cin >> id;
             if(arch.existeProducto(id)){
                 reg = reg.cargarProductoModificado(id);
+
                 bool ok = arch.modificarRegistro(reg, id) ;
                 if (!ok) {
                     cout << "No se pudo abrir el archivo o no hay datos." << endl;
