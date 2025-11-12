@@ -1,8 +1,6 @@
 #pragma once
 
 
-
-
 class Categoria{
 private:
     int _idCategoria;

@@ -21,7 +21,7 @@ public:
     const char *getNombre();
     bool getEliminado();
 
-    // Métodos auxiliares
+
     void cargarMarca();
     void mostrarMarca();
 };

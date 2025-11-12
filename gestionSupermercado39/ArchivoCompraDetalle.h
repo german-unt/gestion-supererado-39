@@ -14,6 +14,7 @@ ArchivoCompraDetalle(const char *nombreArchivo="ArchivoCompraDetalle.dat");
 int agregarRegistro(CompraDetalle detalle);
 bool listarPorCompra(int idCompra);
 int cantidadRegistros();
+bool existeRegistro(int idCompra);
 
 
 };

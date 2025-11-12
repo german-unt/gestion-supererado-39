@@ -2,10 +2,7 @@
 using namespace std;
 #include "menuProductos.h"
 #include "menuVenta.h"
-
-// si tenés también compra, podés agregar:
-// #include "compra.h"
-// #include "ArchivoCompra.h"
+#include "menuCompras.h"
 
 
 int main() {
@@ -29,6 +26,10 @@ int main() {
         case 2:
             system("cls");
             menuVenta();
+            break;
+        case 3:
+            system("cls");
+            menuCompras();
             break;
         default: cout << "Opcion no valida" <<endl;
         system ("pause");

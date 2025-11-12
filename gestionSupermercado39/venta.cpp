@@ -22,10 +22,8 @@ void Venta::setIdVendedor(int idVendedor){
 }
 
 
-void Venta::setFecha(int dia, int mes, int anio){
-    _fecha.setDia(dia);
-    _fecha.setMes(mes);
-    _fecha.setAnio(anio);
+void Venta::setFecha(Fecha fecha){
+    _fecha = fecha;
 }
 
 void Venta::setTotal(float total){
@@ -91,6 +89,7 @@ Venta Venta::cargarVenta(){
 
     cout << "Fecha: " << endl;
     fecha.Cargar();
+    venta.setFecha(fecha);
 
     venta.setTotal(0);
 
@@ -99,6 +98,7 @@ Venta Venta::cargarVenta(){
     return venta;
 
 }
+
 
 
 

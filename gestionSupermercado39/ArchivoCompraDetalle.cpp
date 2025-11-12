@@ -54,3 +54,22 @@ int ArchivoCompraDetalle::cantidadRegistros(){
     return cantidad;
 }
 
+bool ArchivoCompraDetalle::existeRegistro(int idCompra){
+
+    FILE *pArchivo = fopen(_nombreArchivo, "rb");
+    if(pArchivo == nullptr){
+        return false;
+    }
+    CompraDetalle reg;
+    bool existe = false;
+    while(fread(&reg,sizeof(CompraDetalle),1,pArchivo)== 1){
+        if(reg.getIdCompra() == idCompra){
+            fclose(pArchivo);
+            existe = true;
+            return existe;
+        }
+    }
+    fclose(pArchivo);
+    return existe;
+
+}

@@ -40,7 +40,7 @@ bool ArchivoCompra::listar(){
     }
 
     while(fread(&registro, sizeof(Compra),1,pArchivo)==1){
-        registro.mostrarCompra();
+        registro.mostrarCompra(registro);
     }
     fclose(pArchivo);
     return true;
@@ -73,8 +73,9 @@ int ArchivoCompra::cantidadRegistros(){
         if(pArchivo == nullptr){
         return -1;
     }
+    int cantidad = 0;
     fseek(pArchivo,0,SEEK_END);
-    int cantidad = ftell(pArchivo) / sizeof(Compra);
+    cantidad = ftell(pArchivo) / sizeof(Compra);
     fclose(pArchivo);
     return cantidad;
 
@@ -92,7 +93,7 @@ bool ArchivoCompra::eliminarLogico(int idCompra){
     while(fread(&registroActual,sizeof(Compra),1,pArchivo)==1){
         if(registroActual.getIdCompra()== idCompra){
             fseek(pArchivo,-sizeof(Compra),SEEK_CUR);
-            registroActual.setEstado(false);
+            registroActual.setEstado(true);
             modificado = fwrite(&registroActual,sizeof(Compra),1,pArchivo) ? true : false;
             break;
         }
@@ -112,7 +113,7 @@ bool ArchivoCompra::listarComprasXProveedor(int CodigoProveedor){
 
     while(fread(&registroActual,sizeof(Compra),1,pArchivo)==1){
         if(registroActual.getEstado() == true && registroActual.getIdProveedor() == CodigoProveedor){
-            registroActual.mostrarCompra();
+            registroActual.mostrarCompra(registroActual);
         }
     }
     fclose(pArchivo);
@@ -132,7 +133,7 @@ bool ArchivoCompra::listarComprasXMes(int mes){
 
     while(fread(&registroActual,sizeof(Compra),1,pArchivo)==1){
         if(registroActual.getEstado() == true && registroActual.getFecha().getMes() == mes){
-            registroActual.mostrarCompra();
+            registroActual.mostrarCompra(registroActual);
         }
     }
     fclose(pArchivo);
@@ -151,10 +152,44 @@ bool ArchivoCompra::listarComprasXAnio(int anio){
 
     while(fread(&registroActual,sizeof(Compra),1,pArchivo)==1){
         if(registroActual.getEstado() == true && registroActual.getFecha().getAnio() == anio){
-            registroActual.mostrarCompra();
+            registroActual.mostrarCompra(registroActual);
         }
     }
     fclose(pArchivo);
     return true;
 
 }
+
+
+bool ArchivoCompra::estado(int id){
+    Compra registroActual;
+    FILE *pArchivo = fopen(_nombreArchivo, "rb");
+    if(pArchivo == nullptr ){
+        return false;
+    }
+
+    bool eliminado = false;
+    while(fread(&registroActual,sizeof(Compra),1,pArchivo)== 1){
+        if(registroActual.getIdCompra() == id){
+            eliminado = registroActual.getEstado();
+            fclose(pArchivo);
+            return eliminado;
+        }
+    }
+    fclose(pArchivo);
+    return eliminado;
+}
+
+Compra ArchivoCompra::leer(int numero){
+   FILE *p = fopen(_nombreArchivo, "rb");
+   if (p==nullptr)
+   {
+     return Compra();
+   }
+   Compra aux;
+   fseek(p,numero*sizeof(Compra), 0);
+   fread(&aux, sizeof(Compra), 1,p);
+   fclose(p);
+   return aux;
+ }
+

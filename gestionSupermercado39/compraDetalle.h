@@ -23,4 +23,5 @@ public:
     float getSubtotal();
 
     void mostrarCompraDetalle();
+    CompraDetalle cargarCompraDetalle(int idCompra);
 };

@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "fecha.h"
+#include "compra.h"
 
 
 
@@ -20,7 +21,7 @@ public:
     ///setters
     void setIdCompra(int idCompra);
     void setIdProveedor(int idProveedor);
-    void setFecha(int dia, int mes, int anio);
+    void setFecha(Fecha fecha);
     void setTotal(float total);
     void setEstado(bool estado);
 
@@ -32,8 +33,10 @@ public:
     float getTotal();
     bool getEstado();
 
-    void mostrarCompra();
+    void mostrarCompra(Compra compra);
+    void mostrarTodos();
     void sumarAlTotal(float subtotal);
+    Compra cargarCompra();
 };
 
 

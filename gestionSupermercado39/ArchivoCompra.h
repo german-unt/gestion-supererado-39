@@ -16,7 +16,8 @@ public:
     bool listarComprasXProveedor(int CodigoProveedor); //ok
     bool listarComprasXMes(int mes); //ok
     bool listarComprasXAnio(int anio); //ok
-
+    bool estado(int id);
+    Compra leer(int numero);
 
 };
 

@@ -35,7 +35,6 @@ bool ArchivoProveedor::listar(){
     }
 
     while(fread(&registro, sizeof (Proveedor),1,pArchivo) == 1){
-            //poner mostarProveedor;
         cout << registro.getIdProveedor() << " - " << registro.getNombre() << " - " << registro.getEliminado()<< endl;
     }
     fclose(pArchivo);

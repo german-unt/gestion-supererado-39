@@ -2,6 +2,7 @@
 #include <iostream>
 #include "compra.h"
 #include "fecha.h"
+#include "ArchivoCompra.h"
 using namespace std;
 
 void Compra::setIdCompra(int idCompra){
@@ -22,10 +23,8 @@ void Compra::setIdProveedor(int idProveedor){
 }
 
 
-void Compra::setFecha(int dia, int mes, int anio){
-    _fecha.setDia(dia);
-    _fecha.setMes(mes);
-    _fecha.setAnio(anio);
+void Compra::setFecha(Fecha fecha){
+    _fecha = fecha;
 }
 
 
@@ -46,14 +45,50 @@ bool Compra::getEstado(){return _eliminada;   }
 
 void Compra::sumarAlTotal(float subtotal){ _total += subtotal; }
 
-void Compra::mostrarCompra(){
-    cout << "ID COMPRA: " << getIdCompra() << endl;
-    cout << "ID PROVEEDOR: " << getIdProveedor() << endl;
-    cout << "FECHA: " << getFechatoString() << endl;
-    cout << "TOTAL: " << getTotal() << endl;
+void Compra::mostrarCompra(Compra reg){
+    cout << "ID COMPRA: " << reg.getIdCompra() << endl;
+    cout << "ID PROVEEDOR: " << reg.getIdProveedor() << endl;
+    cout << "FECHA: " << reg.getFechatoString() << endl;
+    cout << "TOTAL: " << reg.getTotal() << endl;
     cout << "*******************************************" << endl;
 }
 
+void Compra::mostrarTodos(){
+    ArchivoCompra archi;
+    Compra reg;
+    for(int i = 0; i< archi.cantidadRegistros(); i++){
+        reg = archi.leer(i);
+        if(!reg.getEstado()){
+            mostrarCompra(reg);
+        }
+    }
+    system("pause");
+}
 
+
+
+Compra Compra::cargarCompra() {
+    Compra compra;
+    ArchivoCompra archiC;
+    int idProveedor;
+    Fecha fecha;
+    bool eliminada = false;
+
+    int idCompra = archiC.cantidadRegistros()+1;
+    compra.setIdCompra(idCompra);
+
+    cout << "ID de proveedor: ";
+    cin >> idProveedor;
+    compra.setIdProveedor(idProveedor);
+
+    cout << "Fecha de la compra:" << endl;
+    fecha.Cargar();
+    compra.setFecha(fecha);
+
+    compra.setTotal(0);
+    compra.setEstado(eliminada);
+
+    return compra;
+}
 
 

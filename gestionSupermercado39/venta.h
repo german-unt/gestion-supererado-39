@@ -13,7 +13,7 @@ private:
 public:
     void setIdVenta(int idVenta);
     void setIdVendedor(int idVendedor);
-    void setFecha(int dia, int mes, int anio);
+    void setFecha(Fecha fecha);
     void setTotal(float total);
     void setEstado(bool estado);
 

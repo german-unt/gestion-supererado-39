@@ -62,6 +62,12 @@
 		<Unit filename="marca.cpp" />
 		<Unit filename="marca.h" />
 		<Unit filename="menu.cpp" />
+		<Unit filename="menuCompras.cpp" />
+		<Unit filename="menuCompras.h" />
+		<Unit filename="menuProductos.cpp" />
+		<Unit filename="menuProductos.h" />
+		<Unit filename="menuVenta.cpp" />
+		<Unit filename="menuVenta.h" />
 		<Unit filename="producto.cpp" />
 		<Unit filename="producto.h">
 			<Option target="&lt;{~None~}&gt;" />
