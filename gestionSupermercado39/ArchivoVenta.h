@@ -12,7 +12,7 @@ public:
     int modificarRegistro(Venta registro, int idVenta);
     int cantidadRegistros();
     bool eliminarLogico(int idVenta);
-
+    Venta leer(int numero);
 };
 
 

@@ -61,7 +61,7 @@ int ArchivoProducto::cantidadRegistros(){
 }
 
 
-/*bool ArchivoProducto::listar(){
+bool ArchivoProducto::existeProducto(int idProducto){
     Producto registroActual;
     FILE *pArchivo = fopen(_nombreArchivo, "rb");
         if(pArchivo==nullptr){
@@ -69,12 +69,15 @@ int ArchivoProducto::cantidadRegistros(){
     }
 
     while(fread(&registroActual,sizeof(Producto),1,pArchivo)==1){
-        registroActual.mostrarProducto(); // aca va registroActual.Mostrar()
+        if(registroActual.getIdProducto() == idProducto){
+            fclose(pArchivo);
+            return true;
+        }
     }
     fclose(pArchivo);
-    return true;
+    return false;
 }
-*/
+
 
 bool ArchivoProducto::eliminarLogico(int idProducto){
     Producto registroActual;
@@ -84,7 +87,7 @@ bool ArchivoProducto::eliminarLogico(int idProducto){
     }
     bool modificado = false;
     while(fread(&registroActual,sizeof(Producto),1,pArchivo)==1){
-          if(registroActual.getIdProducto()== idProducto){
+          if(registroActual.getIdProducto() == idProducto && registroActual.getEliminado() == false){
             fseek(pArchivo,-sizeof(Producto), SEEK_CUR);
             registroActual.setEliminado(true);
             modificado = fwrite(&registroActual,sizeof(Producto),1,pArchivo) ? true : false;
@@ -123,6 +126,8 @@ Producto ArchivoProducto::leer(int numero)
    fclose(p);
    return aux;
  }
+
+
 /*
 bool ArchivoProducto::listarXCategoria(){
     Producto registroActual;

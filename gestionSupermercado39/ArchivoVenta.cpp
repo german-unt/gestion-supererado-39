@@ -23,6 +23,21 @@ int ArchivoVenta::agregarRegistro(Venta nuevoRegistro){
     }
 }
 
+Venta ArchivoVenta::leer(int numero){
+   FILE *p = fopen(_nombreArchivo, "rb");
+   if (p==nullptr)
+   {
+     return Venta();
+   }
+   Venta aux;
+   fseek(p,numero*sizeof(Venta), 0);
+   fread(&aux, sizeof(Venta), 1,p);
+   fclose(p);
+   return aux;
+ }
+
+
+
 bool ArchivoVenta::listar(){
     Venta registroActual;
     FILE *pArchivo = fopen(_nombreArchivo, "rb");
@@ -31,8 +46,8 @@ bool ArchivoVenta::listar(){
     }
 
     while(fread(&registroActual,sizeof(Venta),1,pArchivo)==1){
-        if(registroActual.getEstado()){
-            registroActual.mostrarVenta();
+        if(!registroActual.getEstado()){
+            registroActual.mostrarVenta(registroActual);
         }
     }
     fclose(pArchivo);

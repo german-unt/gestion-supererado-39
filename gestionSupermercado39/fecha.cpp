@@ -25,18 +25,29 @@ using namespace std;
  }
 
  //SETS
- void Fecha::setDia(int dia)
- {
-   _dia = dia;
- }
+ void Fecha::setDia(int dia){
+    while (dia < 1 || dia > 31) {
+        cout << "Dia invalido, ingrese nuevamente un dia valido: ";
+        cin >> dia;
+    }
+    _dia = dia;
+}
 
- void Fecha::setMes(int mes)
- {
+
+ void Fecha::setMes(int mes){
+    while (mes < 1 || mes > 12) {
+        cout << "Mes invalido, ingrese nuevamente un mes valido: ";
+        cin >> mes;
+    }
    _mes = mes;
  }
 
- void Fecha::setAnio(int anio)
- {
+ void Fecha::setAnio(int anio){
+    while (anio < 1960 ) {
+        cout << "Anio invalido, ingrese nuevamente un anio valido: ";
+        cin >> anio;
+    }
+
    _anio = anio;
  }
 
@@ -58,12 +69,17 @@ using namespace std;
 
  void Fecha::Cargar()
  {
+    int dia, mes, anio;
+
    cout << "DIA: ";
-   cin >> _dia;
+   cin >> dia;
+   setDia(dia);
    cout << "MES: ";
-   cin >> _mes;
+   cin >> mes;
+   setMes(mes);
    cout << "ANIO: ";
-   cin >> _anio;
+   cin >> anio;
+   setAnio(anio);
  }
 
  void Fecha::Mostrar()

@@ -26,3 +26,28 @@ void VentaDetalle::mostrarVentaDetalle(){
     cout << "SUBTOTAL: " <<getSubtotal() << endl;
     cout << "*******************************************" << endl;
 }
+
+VentaDetalle VentaDetalle::cargarVentaDetalle(int idVenta){
+    VentaDetalle reg;
+    int idProducto, cantidad;
+    float precio;
+
+    reg.setIdVenta(idVenta);
+
+    cout << "ID Producto: ";
+    cin >> idProducto;
+    reg.setIdProducto(idProducto);
+
+    cout << "Cantidad: ";
+    cin >> cantidad;
+    reg.setCantidad(cantidad);
+
+    cout << "Precio unitario: ";
+    cin >> precio;
+    reg.setPrecioUnitario(precio);
+
+    reg.setSubtotal();
+
+    return reg;
+
+}

@@ -1,7 +1,8 @@
 #pragma once
 
 class VentaDetalle{
-    private: int _idVenta;
+    private:
+    int _idVenta;
     int _idProducto;
     int _cantidad;
     float _precioUnitario;
@@ -18,4 +19,5 @@ public:
     float getPrecioUnitario();
     float getSubtotal();
     void mostrarVentaDetalle();
+    VentaDetalle cargarVentaDetalle(int idVenta);
 };

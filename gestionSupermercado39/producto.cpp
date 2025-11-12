@@ -99,7 +99,7 @@ Fecha Producto::getFechaDeVencimiento(){
 
 // Métodos auxiliares
 Producto Producto::cargarProducto() {
-    ArchivoProducto archiP("ArchivoProducto.dat");
+    ArchivoProducto archiP;
     Producto producto;
     int idProducto;
     int idCategoria;
@@ -110,6 +110,7 @@ Producto Producto::cargarProducto() {
     bool eliminado;
     Fecha fechaDeVencimiento;
 
+    //idProducto = archiP.cantidadRegistros()+1;
     idProducto = archiP.cantidadRegistros()+1;
     producto.setIdProducto(idProducto);
 
@@ -145,6 +146,53 @@ Producto Producto::cargarProducto() {
 
 }
 
+
+Producto Producto::cargarProductoModificado(int idProducto) {
+    Producto producto;
+    int idCategoria;
+    int  idMarca;
+    float precioUnitario;
+    int stock;
+    char nombreProducto [20];
+    bool eliminado;
+    Fecha fechaDeVencimiento;
+
+
+    producto.setIdProducto(idProducto);
+
+    cout << "ID categoria: ";
+    cin >> idCategoria;
+    producto.setIdCategoria(idCategoria);
+
+    cout << "ID marca: ";
+    cin >> idMarca;
+    producto.setIdMarca(idMarca);
+
+
+    cout << "Precio unitario: ";
+    cin >> precioUnitario;
+    producto.setPrecioUnitario(precioUnitario);
+
+    cout << "Stock: ";
+    cin >> stock;
+    producto.setStock(stock);
+
+    cout << "Nombre del producto: ";
+    cargarCadena(nombreProducto,19);
+    producto.setNombreProducto(nombreProducto);
+
+    eliminado = false;
+    producto.setEliminado(eliminado);
+
+    cout <<"Fecha de vencimiento: "<<endl;
+    fechaDeVencimiento.Cargar();
+    producto.setFechaDeVencimiento(fechaDeVencimiento);
+
+    return producto;
+
+}
+
+
 void Producto::mostrarProducto(Producto producto) {
     cout << endl;
     cout << "ID Producto: " << producto.getIdProducto() << endl;
@@ -167,7 +215,9 @@ void Producto::mostrarTodos(){
     Producto producto;
     for(int i = 0; i < archi.cantidadRegistros(); i++){
         producto = archi.leer(i);
-        mostrarProducto(producto);
+        if(!producto.getEliminado()){
+            mostrarProducto(producto);
+        }
     }
     system("pause");
 

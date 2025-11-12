@@ -37,6 +37,7 @@ bool getEliminado();
 Fecha getFechaDeVencimiento();
 
 Producto cargarProducto();
+Producto cargarProductoModificado(int id);
 void mostrarProducto(Producto producto);
 void mostrarTodos();
 

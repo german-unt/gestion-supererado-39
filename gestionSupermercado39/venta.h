@@ -1,6 +1,7 @@
 #pragma once
 #include "fecha.h"
 
+
 class Venta{
 private:
     int _idVenta;
@@ -24,8 +25,10 @@ public:
     float getTotal();
     bool getEstado();
 
-    void mostrarVenta();
+    void mostrarTodos();
+    void mostrarVenta(Venta venta);
     void sumarAlTotal(float subtotal);
+    Venta cargarVenta();
 };
 
 

@@ -11,6 +11,7 @@ public:
     int agregarRegistro(VentaDetalle registro);
     bool listarPorVenta(int idVenta);
     int cantidadRegistros();
+    bool existeRegistro(int idVenta);
 
 };
 

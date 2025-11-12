@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstring>
 #include "venta.h"
+#include "ArchivoVenta.h"
 using namespace std;
 
 
@@ -23,10 +24,78 @@ float Venta::getTotal(){return _total;}
 bool Venta::getEstado(){ return _anulada;}
 void Venta::sumarAlTotal(float subtotal){_total+= subtotal; }
 
-void Venta::mostrarVenta(){
-    cout << "ID VENTA: " << getIdVenta() << endl;
-    cout << "ID VENDEDOR: " << getIdVendedor() << endl;
-    cout << "FECHA: " << getFechatoString() << endl;
-    cout << "TOTAL: " << getTotal() << endl;
+
+
+void Venta::mostrarVenta(Venta reg){
+    cout << endl;
+    cout << "ID VENTA: " << reg.getIdVenta() << endl;
+    cout << "ID VENDEDOR: " << reg.getIdVendedor() << endl;
+    cout << "FECHA: " << reg.getFechatoString() << endl;
+    cout << "TOTAL: " << reg.getTotal() << endl;
     cout << "*******************************************" << endl;
 }
+
+
+
+
+void Venta::mostrarTodos(){
+    ArchivoVenta archi;
+    Venta reg;
+    for(int i = 0; i< archi.cantidadRegistros(); i++){
+        reg = archi.leer(i);
+        mostrarVenta(reg);
+    }
+    system("pause");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///
+
+Venta Venta::cargarVenta(){
+    Venta venta;
+
+    int idVenta, idVendedor;
+    float total;
+    Fecha fecha;
+    bool anulada = false;
+
+    cout << "ID de venta: ";
+    cin >> idVenta;
+    venta.setIdVenta(idVenta);
+
+    cout << "ID de vendedor: ";
+    cin >> idVendedor;
+    venta.setIdVendedor(idVendedor);
+
+    cout << "Fecha: ";
+    fecha.Cargar();
+
+    venta.setTotal(0);
+
+    venta.setEstado(anulada);
+
+    return venta;
+
+}
+
+
+
