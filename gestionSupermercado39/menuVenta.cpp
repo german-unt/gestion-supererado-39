@@ -56,8 +56,11 @@ void menuVenta(){
                     cout << "Ingrese el id de la venta a detallar: ";
                     cin >> id;
                     bool ok = archiVD.existeRegistro(id);
+                    bool eliminado = archiV.estado(id);
                     if(!ok){
                         cout << "El id ingresado no se encuenta" <<endl;
+                    }else if(eliminado){
+                        cout << "La venta se encuentra eliminada " << endl;
                     }else{
                         archiVD.listarPorVenta(id);
                     }
@@ -73,11 +76,19 @@ void menuVenta(){
                 bool ok = archiVD.existeRegistro(id);
                 if(!ok){
                     cout << "El id ingresado no se encuenta" <<endl;
+                }else if(archiV.estado(id)){
+                    cout << "El archivo ya se elimino anteriormente" << endl;
                 }else{
-                    v.setEstado(true);
+                    bool elimnado  = archiV.eliminarLogico(id);
+                    if(elimnado){
+                        cout << "Eliminado" << endl;
+                    }else{
+                        cout << "No se pudo eliminar " << endl;
+                    }
                 }
+                system("pause");
             }
-
+            break;
         case 0: break;
         default: cout << "Opcion invalida." << endl; break;
         }

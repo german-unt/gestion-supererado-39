@@ -11,6 +11,7 @@ public:
     bool listar();
     int modificarRegistro(Venta registro, int idVenta);
     int cantidadRegistros();
+    bool estado(int id);
     bool eliminarLogico(int idVenta);
     Venta leer(int numero);
 };

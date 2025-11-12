@@ -29,9 +29,12 @@ void Venta::setFecha(int dia, int mes, int anio){
 }
 
 void Venta::setTotal(float total){
-     _total = total;}
+     _total = total;
+}
+
 void Venta::setEstado(bool estado){
-     _anulada = estado;}
+     _eliminada = estado;
+}
 
 
 
@@ -42,7 +45,7 @@ int Venta::getIdVendedor(){return _idVendedor; }
 std::string Venta::getFechatoString(){ return _fecha.toString(); }
 Fecha Venta::getFecha(){return _fecha;}
 float Venta::getTotal(){return _total;}
-bool Venta::getEstado(){ return _anulada;}
+bool Venta::getEstado(){ return _eliminada;}
 void Venta::sumarAlTotal(float subtotal){_total+= subtotal; }
 
 
@@ -64,21 +67,22 @@ void Venta::mostrarTodos(){
     Venta reg;
     for(int i = 0; i< archi.cantidadRegistros(); i++){
         reg = archi.leer(i);
-        mostrarVenta(reg);
+        if(!reg.getEstado()){
+            mostrarVenta(reg);
+        }
     }
     system("pause");
 }
 
 Venta Venta::cargarVenta(){
     Venta venta;
-
+    ArchivoVenta archiV;
     int idVenta, idVendedor;
     float total;
     Fecha fecha;
-    bool anulada = false;
+    bool eliminada = false;
 
-    cout << "ID de venta: ";
-    cin >> idVenta;
+    idVenta = archiV.cantidadRegistros()+1;
     venta.setIdVenta(idVenta);
 
     cout << "ID de vendedor: ";
@@ -90,7 +94,7 @@ Venta Venta::cargarVenta(){
 
     venta.setTotal(0);
 
-    venta.setEstado(anulada);
+    venta.setEstado(eliminada);
 
     return venta;
 

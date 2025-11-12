@@ -10,7 +10,7 @@ private:
   float _precioUnitario;
   int _stock;
   char _nombreProducto [20];
-  bool _eliminado;
+  bool _eliminado = false;
   Fecha _fechaDeVencimiento;
 
 public:

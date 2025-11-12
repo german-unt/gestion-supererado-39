@@ -35,6 +35,10 @@ void VentaDetalle::setPrecioUnitario(float precio){
     _precioUnitario = precio;
 }
 
+void VentaDetalle::setEstado(bool anulada){
+    _anulada = anulada;
+}
+
 void VentaDetalle::setSubtotal(){_subtotal = _precioUnitario * _cantidad;}
 
 
@@ -43,6 +47,7 @@ int VentaDetalle::getIdProducto(){return _idProducto; }
 int VentaDetalle::getCantidad(){return _cantidad; }
 float VentaDetalle::getPrecioUnitario(){return _precioUnitario; }
 float VentaDetalle::getSubtotal(){return _subtotal; }
+bool  VentaDetalle::getEstado(){return _anulada; }
 
 
 void VentaDetalle::mostrarVentaDetalle(){
@@ -73,6 +78,7 @@ VentaDetalle VentaDetalle::cargarVentaDetalle(int idVenta){
     cin >> precio;
     reg.setPrecioUnitario(precio);
 
+    reg.setEstado(false);
     reg.setSubtotal();
 
     return reg;

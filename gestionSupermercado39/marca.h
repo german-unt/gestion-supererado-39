@@ -4,7 +4,7 @@ class Marca {
 private:
     int _idMarca;
     char _nombre[20];
-    bool _eliminado;
+    bool _eliminado = false;
 
 public:
     // Constructores

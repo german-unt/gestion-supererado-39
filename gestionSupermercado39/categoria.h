@@ -7,7 +7,7 @@ class Categoria{
 private:
     int _idCategoria;
     char _nombre[20];
-    bool _eliminado;
+    bool _eliminado = false;
 
 public:
     Categoria(int idCategoria, const char *nombre, bool eliminado);

@@ -13,7 +13,7 @@ private:
  int _idProveedor;
  Fecha _fecha;
  float _total = 0;
- bool _anulada = false;
+ bool _eliminada = false;
 
 
 public:

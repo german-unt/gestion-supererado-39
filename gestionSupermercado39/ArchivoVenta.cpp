@@ -46,7 +46,7 @@ bool ArchivoVenta::listar(){
     }
 
     while(fread(&registroActual,sizeof(Venta),1,pArchivo)==1){
-        if(!registroActual.getEstado()){
+        if(registroActual.getEstado()){
             registroActual.mostrarVenta(registroActual);
         }
     }
@@ -76,6 +76,25 @@ int ArchivoVenta::modificarRegistro(Venta registro, int idVenta){
     }
 }
 
+bool ArchivoVenta::estado(int id){
+    Venta registroActual;
+    FILE *pArchivo = fopen(_nombreArchivo, "rb");
+    if(pArchivo == nullptr ){
+        return false;
+    }
+
+    bool eliminado = false;
+    while(fread(&registroActual,sizeof(Venta),1,pArchivo)== 1){
+        if(registroActual.getIdVenta() == id){
+            eliminado = registroActual.getEstado();
+            fclose(pArchivo);
+            return eliminado;
+        }
+    }
+    fclose(pArchivo);
+    return eliminado;
+}
+
 int ArchivoVenta::cantidadRegistros(){
 
     FILE *pArchivo = fopen(_nombreArchivo, "rb");
@@ -100,7 +119,7 @@ bool ArchivoVenta::eliminarLogico(int idVenta){
     while(fread(&registroActual,sizeof(Venta),1,pArchivo)==1){
         if(registroActual.getIdVenta()== idVenta){
             fseek(pArchivo,-sizeof(Venta), SEEK_CUR);
-            registroActual.setEstado(false);
+            registroActual.setEstado(true);
             modificado = fwrite(&registroActual,sizeof(Venta),1,pArchivo);
             break;
         }
@@ -111,6 +130,4 @@ bool ArchivoVenta::eliminarLogico(int idVenta){
     }else{
         return false;
     }
-
-
 }

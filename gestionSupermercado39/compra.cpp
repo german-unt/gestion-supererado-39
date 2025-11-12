@@ -32,7 +32,7 @@ void Compra::setFecha(int dia, int mes, int anio){
 void Compra::setTotal(float total){_total = total;  }
 
 
-void Compra::setEstado(bool estado){_anulada  = estado; }
+void Compra::setEstado(bool estado){_eliminada  = estado; }
 
 ///getters
 int Compra::getIdCompra(){return _idCompra; }
@@ -40,7 +40,7 @@ int Compra::getIdProveedor(){return _idProveedor;   }
 string Compra::getFechatoString(){return _fecha.toString();    }
 Fecha Compra::getFecha(){return _fecha;}
 float Compra::getTotal(){return _total; }
-bool Compra::getEstado(){return _anulada;   }
+bool Compra::getEstado(){return _eliminada;   }
 
 
 

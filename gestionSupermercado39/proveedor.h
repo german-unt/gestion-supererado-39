@@ -3,7 +3,7 @@ class Proveedor{
 private:
 int _idProveedor;
 char _nombre [20];
-bool _eliminado;
+bool _eliminado = false;
 
 public:
 Proveedor (int idproveedor, const char *nombre, bool eliminado);

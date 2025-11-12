@@ -5,7 +5,7 @@
 	"Compra.h"
 	"ArchivoCompra.h"
 
-1762760838 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\compra.h
+1762932167 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\compra.h
 	<string>
 	"fecha.h"
 
@@ -33,12 +33,12 @@
 	"ArchivoVentaDetalle.h"
 	"ventaDetalle.h"
 
-1762926836 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\archivoventadetalle.h
+1762933686 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\archivoventadetalle.h
 	"ventaDetalle.h"
 
-1762922984 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\ventadetalle.h
+1762931108 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\ventadetalle.h
 
-1762929041 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\compra.cpp
+1762932181 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\compra.cpp
 	<string>
 	<iostream>
 	"compra.h"
@@ -75,31 +75,31 @@
 	<cstring>
 	"proveedor.h"
 
-1762929272 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\venta.cpp
+1762934236 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\venta.cpp
 	<iostream>
 	<cstring>
 	"venta.h"
 	"ArchivoVenta.h"
 
-1762827876 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\proveedor.h
+1762932167 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\proveedor.h
 
-1762929555 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\ventadetalle.cpp
+1762931174 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\ventadetalle.cpp
 	<iostream>
 	"ventaDetalle.h"
 
-1762924630 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\archivoventa.cpp
+1762933714 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\archivoventa.cpp
 	<cstdio>
 	<cstring>
 	"ArchivoVenta.h"
 	"venta.h"
 
-1762924594 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\archivoventa.h
+1762933700 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\archivoventa.h
 	"venta.h"
 
-1762924894 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\venta.h
+1762932558 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\venta.h
 	"fecha.h"
 
-1762830064 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\marca.h
+1762932167 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\marca.h
 
 1762925702 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\archivoproducto.cpp
 	"ArchivoProducto.h"
@@ -111,7 +111,7 @@
 	<string>
 	"Producto.h"
 
-1762908518 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\producto.h
+1762932167 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\producto.h
 	"fecha.h"
 
 1762830064 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\categoria.h
@@ -269,7 +269,7 @@
 
 1762907787 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\funcionesglobales.h
 
-1762925584 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\menuproductos.cpp
+1762929783 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\menuproductos.cpp
 	<iostream>
 	"menuProductos.h"
 
@@ -277,7 +277,7 @@
 	"producto.h"
 	"ArchivoProducto.h"
 
-1762926961 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\menuventa.cpp
+1762934464 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\menuventa.cpp
 	<iostream>
 	"menuVenta.h"
 	"venta.h"
