@@ -11,7 +11,9 @@ void menuProductos() {
     int opc;
     do {
         system("cls");
-        cout << "----- MENU PRODUCTOS -----" << endl;
+        cout << "==========================" << endl;
+        cout << "      MENU PRODUCTOS       " << endl;
+        cout << "==========================" << endl;
         cout << "1) Cargar producto" << endl;
         cout << "2) Listar productos" << endl;
         cout << "3) Eliminar producto" << endl;
@@ -34,7 +36,9 @@ void menuProductos() {
             } break;
             case 2: {
                 system("cls");
-                cout << "LISTADO DE PRODUCTOS" << endl;
+                cout << "==========================" << endl;
+                cout << "   LISTADO DE PRODUCTOS" << endl;
+                cout << "==========================" << endl;
                 reg.mostrarTodos() ;
             } break;
             case 3: {

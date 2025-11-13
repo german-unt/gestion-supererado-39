@@ -50,16 +50,21 @@ void Compra::mostrarCompra(Compra reg){
     cout << "ID PROVEEDOR: " << reg.getIdProveedor() << endl;
     cout << "FECHA: " << reg.getFechatoString() << endl;
     cout << "TOTAL: " << reg.getTotal() << endl;
-    cout << "*******************************************" << endl;
+    cout << "===========================================" << endl;
 }
 
 void Compra::mostrarTodos(){
     ArchivoCompra archi;
     Compra reg;
-    for(int i = 0; i< archi.cantidadRegistros(); i++){
-        reg = archi.leer(i);
-        if(!reg.getEstado()){
-            mostrarCompra(reg);
+    int cantidadRegis = archi.cantidadRegistros();
+    if(cantidadRegis < 0){
+        cout << "- No existen Compras." << endl;
+    }else{
+        for(int i = 0; i< cantidadRegis; i++){
+            reg = archi.leer(i);
+            if(!reg.getEstado()){
+                mostrarCompra(reg);
+            }
         }
     }
     system("pause");

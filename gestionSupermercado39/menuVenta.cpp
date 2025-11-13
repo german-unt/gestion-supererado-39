@@ -15,7 +15,9 @@ void menuVenta(){
 
     do {
         system("cls");
-        cout << "--- MENU DE VENTAS ---" << endl;
+        cout << "==========================" << endl;
+        cout << "      MENU DE VENTAS " << endl;
+        cout << "==========================" << endl;
         cout << "1) Agregar venta" << endl;
         cout << "2) Listar ventas" << endl;
         cout << "3) Listar venta detallada" << endl;
@@ -26,6 +28,7 @@ void menuVenta(){
         cin >> opc;
 
         switch (opc) {
+                /// agg venta
             case 1: {
                 system("cls");
                 Venta reg;
@@ -36,7 +39,7 @@ void menuVenta(){
                 reg.setTotal(0);
 
                 do {
-                    venDet = venDet.cargarVentaDetalle(reg.getIdVenta());
+                    venDet = venDet.cargarVentaDetalle(reg.getIdVenta()); /// cuenta con la validacion de cantidad y idProducto existent
 
 
                     if (venDet.getIdProducto() != 0 && venDet.getCantidad()>0 ) {
@@ -62,9 +65,13 @@ void menuVenta(){
 
         case 2:
             system("cls");
+            cout << "==========================" << endl;
+            cout << "    LISTADO DE VENTAS" << endl;
+            cout << "==========================" << endl;
             v.mostrarTodos();
             break;
         case 3:{
+                    ///detallar venta
                     system("cls");
                     int id;
                     cout << "Ingrese el id de la venta a detallar: ";
@@ -74,7 +81,7 @@ void menuVenta(){
                     if(!ok){
                         cout << "El id ingresado no se encuenta" <<endl;
                     }else if(eliminado){
-                        cout << "La venta se encuentra eliminada " << endl;
+                        cout << "La venta se encuentra eliminada " << endl; // si fue eliminado antes
                     }else{
                         archiVD.listarPorVenta(id);
                     }
@@ -83,6 +90,7 @@ void menuVenta(){
             break;
         case 4:
             {
+                /// eliminar venta
                 system("cls");
                 int id;
                 cout << "Ingrese el id de la venta a eliminar: ";
@@ -104,6 +112,7 @@ void menuVenta(){
             }
             break;
         case 5:
+            ///listar por año
             system("cls");
             int anio;
             cout << "Ingrese el anio: ";

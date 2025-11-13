@@ -96,7 +96,7 @@ Proveedor registroActual;
      return modificado;
 }
 
-
+/// fijarse si es util
 bool ArchivoProveedor::listarXnombre(){
 
     FILE *pArchivo = fopen(_nombreArchivo, "rb");

@@ -1,5 +1,3 @@
-
-
 #include <iostream>
 #include <cstring>
 #include "Compra.h"
@@ -68,7 +66,6 @@ int ArchivoCompra::modificarRegistro(Compra registro, int idCompra){
 }
 
 int ArchivoCompra::cantidadRegistros(){
-    Compra registroActual;
         FILE *pArchivo = fopen(_nombreArchivo, "rb");
         if(pArchivo == nullptr){
         return -1;
@@ -101,24 +98,6 @@ bool ArchivoCompra::eliminarLogico(int idCompra){
     fclose(pArchivo);
     return modificado;
 }
-
-
-
-bool ArchivoCompra::listarComprasXProveedor(int CodigoProveedor){
-    Compra registroActual;
-    FILE *pArchivo = fopen(_nombreArchivo, "rb");
-        if(pArchivo == nullptr){
-        return false;
-    }
-    while(fread(&registroActual,sizeof(Compra),1,pArchivo)==1){
-        if(registroActual.getEstado() == true && registroActual.getIdProveedor() == CodigoProveedor){
-            registroActual.mostrarCompra(registroActual);
-        }
-    }
-    fclose(pArchivo);
-    return true;
-}
-
 
 
 

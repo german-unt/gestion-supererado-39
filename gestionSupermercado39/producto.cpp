@@ -205,16 +205,21 @@ void Producto::mostrarProducto(Producto producto) {
         cout <<"Estado: Activo" << endl;
     }
     cout << "Fecha de vencimiento: " << producto.getFechaDeVencimiento().toString()<< endl;
-    cout << "**************************************************"  <<endl;
+    cout << "=========================================================="  <<endl;
 }
 
 void Producto::mostrarTodos(){
     ArchivoProducto archi("ArchivoProducto.dat");
     Producto producto;
-    for(int i = 0; i < archi.cantidadRegistros(); i++){
-        producto = archi.leer(i);
-        if(!producto.getEliminado()){
-            mostrarProducto(producto);
+    int cantidadRegis = archi.cantidadRegistros();
+    if(cantidadRegis < 0){
+        cout << "- No existen productos." << endl;
+    }else{
+        for(int i = 0; i < cantidadRegis ; i++){
+            producto = archi.leer(i);
+            if(!producto.getEliminado()){
+                mostrarProducto(producto);
+            }
         }
     }
     system("pause");

@@ -15,7 +15,9 @@ void menuCompras() {
 
     do {
         system("cls");
-        cout << "--- MENU DE COMPRAS ---" << endl;
+        cout << "==========================" << endl;
+        cout << "     MENU DE COMPRAS " << endl;
+        cout << "==========================" << endl;
         cout << "1) Agregar compra" << endl;
         cout << "2) Listar compras" << endl;
         cout << "3) Listar detalle de compra" << endl;
@@ -48,6 +50,9 @@ void menuCompras() {
 
         case 2:
             system("cls");
+            cout << "==========================" << endl;
+            cout << "   LISTADO DE COMPRAS: " << endl;
+            cout << "==========================" << endl;
             regis.mostrarTodos();
             break;
 

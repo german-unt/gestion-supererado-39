@@ -31,7 +31,9 @@ int menu() {
             break;
         case 0:
             system("cls");
-            cout << "Gracias por utilizar nuestro sistema!" << endl;
+            cout << "==================================================" << endl;
+            cout << "-   Gracias por utilizar nuestro sistema!" << endl;
+            cout << "==================================================" << endl;
             system("pause");
             break;
         default: cout << "Opcion no valida" <<endl;

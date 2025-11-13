@@ -13,7 +13,6 @@ public:
     int modificarRegistro(Compra registro, int idCompra); //ok
     int cantidadRegistros(); //ok
     bool eliminarLogico(int idCompra); //ok
-    bool listarComprasXProveedor(int CodigoProveedor); //ok
     bool listarComprasXMes(int mes); //ok
     bool listarComprasXAnio(int anio); //ok
     bool estado(int id);

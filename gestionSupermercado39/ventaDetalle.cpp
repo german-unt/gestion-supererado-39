@@ -41,7 +41,7 @@ void VentaDetalle::setEstado(bool anulada){
     _anulada = anulada;
 }
 
-void VentaDetalle::setSubtotal(){_subtotal = _precioUnitario * _cantidad;}
+void VentaDetalle::setSubtotal(){_subtotal = _precioUnitario *(float) _cantidad;}
 
 
 int VentaDetalle::getIdVenta(){return _idVenta; }
@@ -58,7 +58,7 @@ void VentaDetalle::mostrarVentaDetalle(){
     cout << "PRECIO UNITARIO: " << getPrecioUnitario() << endl;
     cout << "CANTIDAD: " << getCantidad() << endl;
     cout << "SUBTOTAL: " <<getSubtotal() << endl;
-    cout << "*******************************************" << endl;
+    cout << "=================================================" << endl;
 }
 
 VentaDetalle VentaDetalle::cargarVentaDetalle(int idVenta) {
@@ -75,7 +75,7 @@ VentaDetalle VentaDetalle::cargarVentaDetalle(int idVenta) {
 
     if(!existe){
         cout << "No se encuentra el producto en la lista, por favor agregue primero el producto." << endl;
-        reg.setIdProducto(0); // invalidado
+        reg.setIdProducto(0); /// invalidado
         reg.setCantidad(0);
         return reg;
     }
@@ -84,13 +84,13 @@ VentaDetalle VentaDetalle::cargarVentaDetalle(int idVenta) {
     cin >> cantidad;
     if (cantidad <= 0) {
         cout << "Cantidad inválida" << endl;
-        reg.setIdProducto(0);
+        reg.setIdProducto(0); /// invalidado
         reg.setCantidad(0);
         return reg;
     }
     if (cantidad > producto.getStock()) {
         cout << "Sin stock disponible" << endl;
-        reg.setIdProducto(0);
+        reg.setIdProducto(0); /// invalidado
         reg.setCantidad(0);
         return reg;
     }
@@ -102,7 +102,7 @@ VentaDetalle VentaDetalle::cargarVentaDetalle(int idVenta) {
     reg.setPrecioUnitario(precio);
     cout << "Precio unitario: " << precio << endl;
     reg.setEstado(false);
-    reg.setSubtotal();
+    reg.setSubtotal(); /// calcula el precio * cantidad
 
     return reg;
 }

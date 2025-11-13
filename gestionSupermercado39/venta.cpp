@@ -54,7 +54,7 @@ void Venta::mostrarVenta(Venta reg){
     cout << "ID VENDEDOR: " << reg.getIdVendedor() << endl;
     cout << "FECHA: " << reg.getFechatoString() << endl;
     cout << "TOTAL: " << reg.getTotal() << endl;
-    cout << "*******************************************" << endl;
+    cout << "=================================================" << endl;
 }
 
 
@@ -63,18 +63,23 @@ void Venta::mostrarVenta(Venta reg){
 void Venta::mostrarTodos(){
     ArchivoVenta archi;
     Venta reg;
-    for(int i = 0; i< archi.cantidadRegistros(); i++){
-        reg = archi.leer(i);
-        if(!reg.getEstado()){
+    int cantidadRegis = archi.cantidadRegistros();
+    if(cantidadRegis < 0){
+        cout << "- No existen Ventas." << endl;
+    }else{
+        for(int i = 0; i< cantidadRegis; i++){
+            reg = archi.leer(i);
+            if(!reg.getEstado()){
             mostrarVenta(reg);
+            }
         }
     }
+
     system("pause");
 }
 
 Venta Venta::cargarVenta(){
     Venta venta;
-    ArchivoVenta archiV;
     int idVenta, idVendedor;
     float total;
     Fecha fecha;

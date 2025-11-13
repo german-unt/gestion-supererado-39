@@ -22,7 +22,7 @@ void CompraDetalle::mostrarCompraDetalle(){
     cout << "PRECIO UNITARIO: " << getPrecioUnitario() << endl;
     cout << "CANTIDAD: " << getCantidad() << endl;
     cout << "SUBTOTAL: " <<getSubtotal() << endl;
-    cout << "*******************************************" << endl;
+    cout << "=================================================" << endl;
 }
 
 CompraDetalle CompraDetalle::cargarCompraDetalle(int idCompra) {
@@ -45,7 +45,7 @@ CompraDetalle CompraDetalle::cargarCompraDetalle(int idCompra) {
     cin >> precioUnitario;
     detalle.setPrecioUnitario(precioUnitario);
 
-    detalle.setSubtotal(); // Calcula el subtotal=precioUnitario * cantidad
+    detalle.setSubtotal(); /// Calcula el subtotal = precioUnitario * cantidad
 
     return detalle;
 }

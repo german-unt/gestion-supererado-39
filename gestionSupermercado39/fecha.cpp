@@ -5,6 +5,7 @@ using namespace std;
 
  Fecha::Fecha()
  {
+    /// coloca la fecha actual
    time_t now = time(0);
    tm* tmPtr = localtime(&now);
    _anio=tmPtr->tm_year+1900;
