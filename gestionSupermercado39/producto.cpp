@@ -7,29 +7,6 @@
 
 using namespace std;
 
-// Constructor con parámetros
-Producto::Producto(int idProducto, int idCategoria, int idMarca, float precioUnitario, int stock, const char *nombreProducto, bool eliminado, Fecha fechaDeVencimiento) {
-    _idProducto = idProducto;
-    _idCategoria = idCategoria;
-    _idMarca = idMarca;
-    _precioUnitario = precioUnitario;
-    _stock = stock;
-    strcpy(_nombreProducto, nombreProducto);
-    _eliminado = eliminado;
-    _fechaDeVencimiento = fechaDeVencimiento;
-}
-
-// Constructor por defecto
-Producto::Producto() {
-    _idProducto = 0;
-    _idCategoria = 0;
-    _idMarca = 0;
-    _precioUnitario = 0.0f;
-    _stock = 0;
-    strcpy(_nombreProducto, "");
-    _eliminado = false;
-    _fechaDeVencimiento = Fecha();
-}
 
 // Setters
 void Producto::setIdProducto(int idProducto) {
@@ -132,8 +109,8 @@ Producto Producto::cargarProducto() {
     bool eliminado;
     Fecha fechaDeVencimiento;
 
-    //idProducto = archiP.cantidadRegistros()+1;
-    idProducto = archiP.cantidadRegistros()+1;
+
+    idProducto = producto.asignarId();
     producto.setIdProducto(idProducto);
 
     cout << "ID categoria: ";
@@ -178,7 +155,6 @@ Producto Producto::cargarProductoModificado(int idProducto) {
     char nombreProducto [20];
     bool eliminado;
     Fecha fechaDeVencimiento;
-
 
     producto.setIdProducto(idProducto);
 
@@ -243,4 +219,17 @@ void Producto::mostrarTodos(){
     }
     system("pause");
 
+}
+
+int Producto::asignarId(){
+     ArchivoProducto archiP;
+     int idMax = 0;
+     int total = archiP.cantidadRegistros();
+     for(int i=0; i<total; i++) {
+        Producto p = archiP.leer(i);
+        if(p.getIdProducto() > idMax){
+            idMax = p.getIdProducto();
+        }
+    }
+     return idMax+1;
 }

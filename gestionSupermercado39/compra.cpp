@@ -74,8 +74,9 @@ Compra Compra::cargarCompra() {
     Fecha fecha;
     bool eliminada = false;
 
-    int idCompra = archiC.cantidadRegistros()+1;
+    int idCompra = compra.asignarId();
     compra.setIdCompra(idCompra);
+
 
     cout << "ID de proveedor: ";
     cin >> idProveedor;
@@ -89,6 +90,20 @@ Compra Compra::cargarCompra() {
     compra.setEstado(eliminada);
 
     return compra;
+}
+
+
+int Compra::asignarId(){
+     ArchivoCompra archiC;
+     int idMax = 0;
+     int total = archiC.cantidadRegistros();
+     for(int i=0; i<total; i++) {
+        Compra c = archiC.leer(i);
+        if(c.getIdCompra() > idMax){
+            idMax = c.getIdCompra();
+        }
+    }
+     return idMax+1;
 }
 
 

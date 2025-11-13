@@ -28,6 +28,7 @@ public:
     void mostrarTodos();
     void mostrarVenta(Venta venta);
     void sumarAlTotal(float subtotal);
+    int asignarId();
     Venta cargarVenta();
 };
 

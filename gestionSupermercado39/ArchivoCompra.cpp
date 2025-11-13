@@ -210,3 +210,7 @@ Compra ArchivoCompra::leer(int numero){
    return aux;
  }
 
+
+
+
+

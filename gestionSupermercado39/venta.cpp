@@ -80,7 +80,7 @@ Venta Venta::cargarVenta(){
     Fecha fecha;
     bool eliminada = false;
 
-    idVenta = archiV.cantidadRegistros()+1;
+    idVenta = venta.asignarId();
     venta.setIdVenta(idVenta);
 
     cout << "ID de vendedor: ";
@@ -98,6 +98,21 @@ Venta Venta::cargarVenta(){
     return venta;
 
 }
+
+
+int Venta::asignarId(){
+     ArchivoVenta archiV;
+     int idMax = 0;
+     int total = archiV.cantidadRegistros();
+     for(int i=0; i<total; i++) {
+        Venta v = archiV.leer(i);
+        if(v.getIdVenta() > idMax){
+            idMax = v.getIdVenta();
+        }
+    }
+     return idMax+1;
+}
+
 
 
 

@@ -72,10 +72,7 @@ void menuProductos() {
                     system("cls");
                     cout << "           Productos en stock: " << endl;
                     cout << "*****************************************" << endl;
-                    bool existe = arch.listarStock();
-                    if(existe){
-                        arch.listarStock();
-                    }else{
+                    if(!arch.listarStock()){
                         cout << "- No existen productos en stock" << endl;
                         cout << "-----------------------------------------" << endl;
                     }

@@ -13,8 +13,6 @@ public:
     int cantidadRegistros(); //ok
     bool listar(); //ok
     bool eliminarLogico(int idProducto); //ok
-    //bool listarXnombre();
-    //bool listarXCategoria();
     bool listarStock();
     bool existeProducto(int idProducto);
     bool buscarPorId(int idProducto, Producto &productoEncontrado);

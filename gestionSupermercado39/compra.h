@@ -36,6 +36,7 @@ public:
     void mostrarCompra(Compra compra);
     void mostrarTodos();
     void sumarAlTotal(float subtotal);
+    int asignarId();
     Compra cargarCompra();
 };
 

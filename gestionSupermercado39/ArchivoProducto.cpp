@@ -100,21 +100,6 @@ bool ArchivoProducto::eliminarLogico(int idProducto){
     return modificado;
 }
 
-/*
-bool ArchivoProducto::listarXnombre(){
-    Producto registroActual;
-    FILE *pArchivo = fopen(_nombreArchivo, "rb");
-        if(pArchivo==nullptr){
-        return false;
-    }
-
-    while(fread(&registroActual,sizeof(Producto),1,pArchivo)==1){
-        registroActual.getNombreProducto();
-    }
-    fclose(pArchivo);
-    return true;
-}
-*/
 Producto ArchivoProducto::leer(int numero)
  {
    FILE *p = fopen(_nombreArchivo, "rb");
@@ -146,22 +131,6 @@ bool ArchivoProducto::buscarPorId(int idProducto, Producto &productoEncontrado){
 }
 
 
-
-/*
-bool ArchivoProducto::listarXCategoria(){
-    Producto registroActual;
-    FILE *pArchivo = fopen(_nombreArchivo, "rb");
-        if(pArchivo==nullptr){
-        return false;
-    }
-
-    while(fread(&registroActual,sizeof(Producto),1,pArchivo)==1){
-        registroActual.getCategoria();
-    }
-    fclose(pArchivo);
-    return true;
-}
-*/
 
 bool ArchivoProducto::listarStock(){
     Producto registroActual;
