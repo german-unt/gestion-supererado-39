@@ -233,3 +233,8 @@ int Producto::asignarId(){
     }
      return idMax+1;
 }
+
+bool Producto::stockDisponible(int cantidad) {
+    bool stock = cantidad > 0 && cantidad <= _stock;
+    return stock;
+}

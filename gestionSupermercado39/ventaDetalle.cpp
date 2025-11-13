@@ -61,38 +61,48 @@ void VentaDetalle::mostrarVentaDetalle(){
     cout << "*******************************************" << endl;
 }
 
-VentaDetalle VentaDetalle::cargarVentaDetalle(int idVenta){
+VentaDetalle VentaDetalle::cargarVentaDetalle(int idVenta) {
     VentaDetalle reg;
-    ArchivoProducto Archiproduc;
+    ArchivoProducto Archiproduc("ArchivoProducto.dat");
     Producto producto;
 
     int idProducto, cantidad;
-    float precio;
 
     cout << "ID Producto: ";
     cin >> idProducto;
 
-    // Buscar el producto despues de pedir el ID
     bool existe = Archiproduc.buscarPorId(idProducto, producto);
 
     if(!existe){
         cout << "No se encuentra el producto en la lista, por favor agregue primero el producto." << endl;
+        reg.setIdProducto(0); // invalidado
+        reg.setCantidad(0);
         return reg;
     }
 
-    // Solo si existe, continua
-    reg.setIdVenta(idVenta);
-    reg.setIdProducto(idProducto);
-
     cout << "Cantidad: ";
     cin >> cantidad;
-    reg.setCantidad(cantidad);
+    if (cantidad <= 0) {
+        cout << "Cantidad inválida" << endl;
+        reg.setIdProducto(0);
+        reg.setCantidad(0);
+        return reg;
+    }
+    if (cantidad > producto.getStock()) {
+        cout << "Sin stock disponible" << endl;
+        reg.setIdProducto(0);
+        reg.setCantidad(0);
+        return reg;
+    }
 
-    precio = producto.getPrecioUnitario();
+    reg.setIdVenta(idVenta);
+    reg.setIdProducto(idProducto);
+    reg.setCantidad(cantidad);
+    float precio = producto.getPrecioUnitario();
     reg.setPrecioUnitario(precio);
     cout << "Precio unitario: " << precio << endl;
-
     reg.setEstado(false);
     reg.setSubtotal();
+
     return reg;
 }

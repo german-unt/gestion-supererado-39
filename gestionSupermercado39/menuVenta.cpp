@@ -39,7 +39,7 @@ void menuVenta(){
                     venDet = venDet.cargarVentaDetalle(reg.getIdVenta());
 
 
-                    if (venDet.getIdProducto() != 0 && venDet.getCantidad()>0) {
+                    if (venDet.getIdProducto() != 0 && venDet.getCantidad()>0 ) {
                         reg.sumarAlTotal(venDet.getSubtotal());
                         archiVD.agregarRegistro(venDet);
                         huboDetalleValido = true;

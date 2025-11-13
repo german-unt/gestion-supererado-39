@@ -39,6 +39,7 @@ Producto cargarProductoModificado(int id);
 void mostrarProducto(Producto producto);
 void mostrarTodos();
 int asignarId();
+bool stockDisponible(int cantidad);
 
 };
 
