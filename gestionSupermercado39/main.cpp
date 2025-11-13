@@ -31,6 +31,11 @@ int main() {
             system("cls");
             menuCompras();
             break;
+        case 0:
+            system("cls");
+            cout << "Gracias por utilizar nuestro sistema!" << endl;
+            system("pause");
+            break;
         default: cout << "Opcion no valida" <<endl;
         system ("pause");
         }

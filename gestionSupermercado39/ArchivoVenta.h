@@ -13,7 +13,9 @@ public:
     int cantidadRegistros();
     bool estado(int id);
     bool eliminarLogico(int idVenta);
+    bool listarPorAnio(int anio);
     Venta leer(int numero);
+
 };
 
 

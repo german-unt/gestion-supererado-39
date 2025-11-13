@@ -2,6 +2,7 @@
 #include "ventaDetalle.h"
 
 
+
 class ArchivoVentaDetalle{
 
 private:

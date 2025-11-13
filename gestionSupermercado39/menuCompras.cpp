@@ -20,6 +20,8 @@ void menuCompras() {
         cout << "2) Listar compras" << endl;
         cout << "3) Listar detalle de compra" << endl;
         cout << "4) Eliminar compra" << endl;
+        cout << "5) Listar compra por mes" << endl;
+        cout << "6) Listar compra por anio" << endl;
         cout << "0) Volver" << endl;
         cout << "Opcion: ";
         cin >> opc;
@@ -88,7 +90,22 @@ void menuCompras() {
                 system("pause");
             }
             break;
-
+        case 5:
+            system("cls");
+            int mes;
+            cout << "Ingrese el mes: ";
+            cin >> mes;
+            archiC.listarComprasXMes(mes);
+            system("pause");
+            break;
+        case 6:
+            system("cls");
+            int anio;
+            cout << "Ingrese el anio: ";
+            cin >> anio;
+            archiC.listarComprasXAnio(anio);
+            system("pause");
+            break;
         case 0: break;
         default:
             cout << "Opción inválida." << endl;

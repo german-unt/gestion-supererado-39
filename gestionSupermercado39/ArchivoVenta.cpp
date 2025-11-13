@@ -1,7 +1,11 @@
+#include <iostream>
 #include <cstdio>
 #include <cstring>
 #include "ArchivoVenta.h"
 #include "venta.h"
+
+using namespace std;
+
 
 
 ArchivoVenta::ArchivoVenta(const char *nombreArchivo){
@@ -46,7 +50,7 @@ bool ArchivoVenta::listar(){
     }
 
     while(fread(&registroActual,sizeof(Venta),1,pArchivo)==1){
-        if(registroActual.getEstado()){
+        if(!registroActual.getEstado()){
             registroActual.mostrarVenta(registroActual);
         }
     }
@@ -130,4 +134,32 @@ bool ArchivoVenta::eliminarLogico(int idVenta){
     }else{
         return false;
     }
+}
+
+
+bool ArchivoVenta::listarPorAnio(int anio){
+    Venta registroActual;
+    FILE *pArchivo = fopen(_nombreArchivo, "rb");
+    if(pArchivo == nullptr ){
+        return false;
+    }
+
+    bool huboVentas = false;
+    float totalAnio = 0;
+
+    while(fread(&registroActual,sizeof(Venta),1,pArchivo)==1){
+        if(registroActual.getFecha().getAnio() == anio && !registroActual.getEstado()){
+            registroActual.mostrarVenta(registroActual);
+            huboVentas = true;
+            totalAnio += registroActual.getTotal();
+        }
+    }
+    fclose(pArchivo);
+
+    if(huboVentas){
+        cout << "TOTAL DE VENTAS EN " << anio << ": $" << totalAnio << endl;
+    } else {
+        cout << "No se registraron ventas en el anio " << anio << endl;
+    }
+    return true;
 }

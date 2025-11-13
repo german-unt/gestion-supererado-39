@@ -20,31 +20,45 @@ void menuVenta(){
         cout << "2) Listar ventas" << endl;
         cout << "3) Listar venta detallada" << endl;
         cout << "4) Eliminar venta detallada" << endl;
+        cout << "5) Listar por anio" << endl;
         cout << "0) Volver" << endl;
         cout << "Opcion: ";
         cin >> opc;
 
         switch (opc) {
-        case 1: {
-            system("cls");
+            case 1: {
+                system("cls");
+                Venta reg;
+                reg = reg.cargarVenta();
 
-            v = v.cargarVenta();
+                int seguir = 1;
+                bool huboDetalleValido = false; // NUEVO: inicializamos en false
+                reg.setTotal(0);
 
-            int seguir = 1;
-            do {
-                venDet = venDet.cargarVentaDetalle(v.getIdVenta());
-                v.sumarAlTotal(venDet.getSubtotal());
-                archiVD.agregarRegistro(venDet);
+                do {
+                    venDet = venDet.cargarVentaDetalle(reg.getIdVenta());
 
-                cout << "Agregar otro detalle? (1=si, 0=no): ";
-                cin >> seguir;
-            } while(seguir == 1);
 
-            archiV.agregarRegistro(v);
-            cout << "Venta guardada. Total: " << v.getTotal() << endl;
-            system("pause");
-            break;
-        }
+                    if (venDet.getIdProducto() != 0 && venDet.getCantidad()>0) {
+                        reg.sumarAlTotal(venDet.getSubtotal());
+                        archiVD.agregarRegistro(venDet);
+                        huboDetalleValido = true;
+                    }
+
+                    cout << "Agregar otro detalle? (1=si, 0=no): ";
+                    cin >> seguir;
+                } while(seguir == 1);
+
+                if (huboDetalleValido) {
+                    archiV.agregarRegistro(reg);
+                    cout << "Venta guardada. Total: " << reg.getTotal() << endl;
+                } else {
+                    cout << "No se registro ninguna venta porque no hay detalles validos cargados." << endl;
+                }
+                system("pause");
+                }
+                break;
+
 
         case 2:
             system("cls");
@@ -88,6 +102,14 @@ void menuVenta(){
                 }
                 system("pause");
             }
+            break;
+        case 5:
+            system("cls");
+            int anio;
+            cout << "Ingrese el anio: ";
+            cin >> anio;
+            archiV.listarPorAnio(anio);
+            system("pause");
             break;
         case 0: break;
         default: cout << "Opcion invalida." << endl; break;

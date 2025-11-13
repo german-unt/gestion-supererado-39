@@ -4,6 +4,8 @@
 #include <iostream>
 #include <cstring>
 
+using namespace std;
+
 ArchivoProducto::ArchivoProducto(const char  *nombreArchivo){
     std::strcpy(_nombreArchivo, nombreArchivo);
 }
@@ -98,7 +100,7 @@ bool ArchivoProducto::eliminarLogico(int idProducto){
     return modificado;
 }
 
-
+/*
 bool ArchivoProducto::listarXnombre(){
     Producto registroActual;
     FILE *pArchivo = fopen(_nombreArchivo, "rb");
@@ -112,7 +114,7 @@ bool ArchivoProducto::listarXnombre(){
     fclose(pArchivo);
     return true;
 }
-
+*/
 Producto ArchivoProducto::leer(int numero)
  {
    FILE *p = fopen(_nombreArchivo, "rb");
@@ -126,6 +128,23 @@ Producto ArchivoProducto::leer(int numero)
    fclose(p);
    return aux;
  }
+
+bool ArchivoProducto::buscarPorId(int idProducto, Producto &productoEncontrado){
+    FILE *pArchivo = fopen(_nombreArchivo, "rb");
+    if(pArchivo == nullptr){
+        return false;
+    }
+    while(fread(&productoEncontrado,sizeof(Producto),1,pArchivo)==1){
+        if(productoEncontrado.getIdProducto() == idProducto && !productoEncontrado.getEliminado()){
+            fclose(pArchivo);
+            return true;
+        }
+    }
+    fclose(pArchivo);
+    return false;
+
+}
+
 
 
 /*
@@ -142,23 +161,26 @@ bool ArchivoProducto::listarXCategoria(){
     fclose(pArchivo);
     return true;
 }
+*/
 
 bool ArchivoProducto::listarStock(){
-        Producto registroActual;
+    Producto registroActual;
     FILE *pArchivo = fopen(_nombreArchivo, "rb");
-        if(pArchivo==nullptr){
+    if(pArchivo==nullptr){
         return false;
     }
-
+    bool existeProducto = false;
     while(fread(&registroActual,sizeof(Producto),1,pArchivo)==1){
-        if(registroActual.getStock() > 0){
-            registroActual.getNombre();
-            registroActual.getStock();
+        if(registroActual.getStock() > 0 && !registroActual.getEliminado()){
+            existeProducto = true;
+            cout <<"- Nombre Producto: " << registroActual.getNombreProducto() << endl;
+            cout <<"- Stock: "<< registroActual.getStock()<< endl;
+            cout << "-----------------------------------------" << endl;
         }
     }
     fclose(pArchivo);
-    return true;
+    return existeProducto;
 
 }
 
-*/
+

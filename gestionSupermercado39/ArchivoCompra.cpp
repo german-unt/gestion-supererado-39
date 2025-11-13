@@ -110,7 +110,6 @@ bool ArchivoCompra::listarComprasXProveedor(int CodigoProveedor){
         if(pArchivo == nullptr){
         return false;
     }
-
     while(fread(&registroActual,sizeof(Compra),1,pArchivo)==1){
         if(registroActual.getEstado() == true && registroActual.getIdProveedor() == CodigoProveedor){
             registroActual.mostrarCompra(registroActual);
@@ -130,13 +129,22 @@ bool ArchivoCompra::listarComprasXMes(int mes){
         if(pArchivo == nullptr){
         return false;
     }
+    bool huboCompras = false;
+    float totalMes = 0;
 
     while(fread(&registroActual,sizeof(Compra),1,pArchivo)==1){
-        if(registroActual.getEstado() == true && registroActual.getFecha().getMes() == mes){
+        if(!registroActual.getEstado() && registroActual.getFecha().getMes() == mes){
             registroActual.mostrarCompra(registroActual);
+            huboCompras = true;
+            totalMes += registroActual.getTotal();
         }
     }
     fclose(pArchivo);
+    if(huboCompras){
+        cout << "TOTAL DE Compras EN " << mes << ": $" << totalMes << endl;
+    } else {
+        cout << "No se registraron Compras en el mes " << mes << endl;
+    }
     return true;
 
 }
@@ -149,13 +157,22 @@ bool ArchivoCompra::listarComprasXAnio(int anio){
         if(pArchivo == nullptr){
         return false;
     }
+    bool huboCompras = false;
+    float totalAnio = 0;
 
     while(fread(&registroActual,sizeof(Compra),1,pArchivo)==1){
-        if(registroActual.getEstado() == true && registroActual.getFecha().getAnio() == anio){
+        if(!registroActual.getEstado() && registroActual.getFecha().getAnio() == anio){
             registroActual.mostrarCompra(registroActual);
+            huboCompras = true;
+            totalAnio += registroActual.getTotal();
         }
     }
     fclose(pArchivo);
+    if(huboCompras){
+        cout << "TOTAL DE Compras EN " << anio << ": $" << totalAnio << endl;
+    } else {
+        cout << "No se registraron Compras en el anio " << anio << endl;
+    }
     return true;
 
 }

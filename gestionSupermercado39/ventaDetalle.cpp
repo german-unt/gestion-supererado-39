@@ -1,5 +1,7 @@
 #include <iostream>
 #include "ventaDetalle.h"
+#include "ArchivoProducto.h"
+#include "producto.h"
 using namespace std;
 
 
@@ -61,26 +63,36 @@ void VentaDetalle::mostrarVentaDetalle(){
 
 VentaDetalle VentaDetalle::cargarVentaDetalle(int idVenta){
     VentaDetalle reg;
+    ArchivoProducto Archiproduc;
+    Producto producto;
+
     int idProducto, cantidad;
     float precio;
 
-    reg.setIdVenta(idVenta);
-
     cout << "ID Producto: ";
     cin >> idProducto;
+
+    // Buscar el producto despues de pedir el ID
+    bool existe = Archiproduc.buscarPorId(idProducto, producto);
+
+    if(!existe){
+        cout << "No se encuentra el producto en la lista, por favor agregue primero el producto." << endl;
+        return reg;
+    }
+
+    // Solo si existe, continua
+    reg.setIdVenta(idVenta);
     reg.setIdProducto(idProducto);
 
     cout << "Cantidad: ";
     cin >> cantidad;
     reg.setCantidad(cantidad);
 
-    cout << "Precio unitario: ";
-    cin >> precio;
+    precio = producto.getPrecioUnitario();
     reg.setPrecioUnitario(precio);
+    cout << "Precio unitario: " << precio << endl;
 
     reg.setEstado(false);
     reg.setSubtotal();
-
     return reg;
-
 }

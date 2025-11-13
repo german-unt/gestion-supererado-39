@@ -3,9 +3,9 @@
 class VentaDetalle{
     private:
     int _idVenta;
-    int _idProducto;
+    int _idProducto = 0;
     int _cantidad;
-    float _precioUnitario;
+    float _precioUnitario = 0;
     float _subtotal;
     bool _anulada = false ;
 public:
