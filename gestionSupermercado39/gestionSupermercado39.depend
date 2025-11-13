@@ -5,10 +5,9 @@
 	"Compra.h"
 	"ArchivoCompra.h"
 
-1762998449 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\compra.h
+1763013077 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\compra.h
 	<string>
 	"fecha.h"
-	"compra.h"
 
 1762752159 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\fecha.h
 	<string>
@@ -87,7 +86,7 @@
 
 1762932167 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\proveedor.h
 
-1763007094 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\ventadetalle.cpp
+1763011336 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\ventadetalle.cpp
 	<iostream>
 	"ventaDetalle.h"
 	"ArchivoProducto.h"
@@ -123,7 +122,7 @@
 
 1762830064 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\categoria.h
 
-1763005442 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\archivoproveedor.cpp
+1763010457 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\archivoproveedor.cpp
 	<cstring>
 	<iostream>
 	"proveedor.h"
@@ -276,7 +275,7 @@
 
 1762943200 c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\funcionesglobales.h
 
-1763006543 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\menuproductos.cpp
+1763011004 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\menuproductos.cpp
 	<iostream>
 	"menuProductos.h"
 
@@ -297,7 +296,7 @@
 	"ArchivoVenta.h"
 	"ArchivoVentaDetalle.h"
 
-1763007223 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\menucompras.cpp
+1763011174 source:c:\users\n1cko\desktop\programacion 2\tp integrador\gestion-supererado-39\gestionsupermercado39\menucompras.cpp
 	<iostream>
 	"menuCompras.h"
 	"compra.h"

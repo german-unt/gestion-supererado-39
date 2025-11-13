@@ -53,25 +53,34 @@ void menuProductos() {
                     cout << "No se pudo abrir el archivo o no hay datos." << endl;
                     }
                 system("pause");
-            } break;
+                }
+                break;
             case 4: {
-                system("cls");
-                int id;
-                cout << "Ingrese ID" << endl;
-                cin >> id;
-                if(arch.existeProducto(id)){
-                    reg = reg.cargarProductoModificado(id);
+                    system("cls");
+                    int id;
+                    cout << "Ingrese ID: ";
+                    cin >> id;
 
-                    bool ok = arch.modificarRegistro(reg, id) ;
-                    if (!ok) {
-                        cout << "No se pudo abrir el archivo o no hay datos." << endl;
-                    }
-                    }else{
-                        cout << "No existe el id ingresado" << endl;
-                    }
-                system("pause");
-            } break;
+                    if (!arch.existeProducto(id)) {
+                        cout << "No existe un producto con ese ID." << endl;
+                    } else {
+                        reg = reg.cargarProductoModificado(id);
 
+                        int ok = arch.modificarRegistro(reg, id);
+                        if (ok == 1) {
+                            cout << "Producto modificado correctamente." << endl;
+                        } else if (ok == -1) {
+                            cout << "Error al abrir el archivo." << endl;
+                        } else if (ok == -2) {
+                            cout << "Error al escribir en el archivo." << endl;
+                        } else {
+                            cout << "Error al modificar el registro." << endl;
+                        }
+                    }
+
+                    system("pause");
+                }
+                break;
             case 5:
                     system("cls");
                     cout << "           Productos en stock: " << endl;

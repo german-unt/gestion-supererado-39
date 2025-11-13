@@ -8,7 +8,7 @@ using namespace std;
 
 void VentaDetalle::setIdVenta(int idVenta){
     while(idVenta < 0){
-        cout << "ID INVALIDO, POT FAVOR INGRESAR OTRO: ";
+        cout << "ID INVALIDO, POR FAVOR INGRESAR OTRO: ";
         cin >> idVenta;
     }
     _idVenta = idVenta;
@@ -16,14 +16,14 @@ void VentaDetalle::setIdVenta(int idVenta){
 
 void VentaDetalle::setIdProducto(int idProducto){
     while(idProducto < 0){
-        cout << "ID INVALIDO, POT FAVOR INGRESAR OTRO: ";
+        cout << "ID INVALIDO, POR FAVOR INGRESAR OTRO: ";
         cin >> idProducto;
     }
     _idProducto = idProducto;
 }
 void VentaDetalle::setCantidad(int cantidad){
     while(cantidad < 0){
-        cout << "CANTIDAD INVALIDA, POT FAVOR INGRESAR OTRA: ";
+        cout << "CANTIDAD INVALIDA, POR FAVOR INGRESAR OTRA: ";
         cin >> cantidad;
     }
     _cantidad = cantidad;
@@ -31,7 +31,7 @@ void VentaDetalle::setCantidad(int cantidad){
 
 void VentaDetalle::setPrecioUnitario(float precio){
     while(precio < 0){
-        cout << "PRECIO INVALIDO, POT FAVOR INGRESAR OTRO: ";
+        cout << "PRECIO INVALIDO, POR FAVOR INGRESAR OTRO: ";
         cin >> precio;
     }
     _precioUnitario = precio;

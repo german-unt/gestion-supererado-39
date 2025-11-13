@@ -1,9 +1,6 @@
 #pragma once
 #include <string>
 #include "fecha.h"
-#include "compra.h"
-
-
 
 
 class Compra{

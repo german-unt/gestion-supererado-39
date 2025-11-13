@@ -66,7 +66,7 @@ void menuCompras() {
             if(!ok){
                 cout << "El id ingresado no se encuenta" <<endl;
             }else if(eliminado){
-                cout << "La venta se encuentra eliminada " << endl;
+                cout << "La compra se encuentra eliminada " << endl;
             }else{
                 archiCD.listarPorCompra(id);
             }

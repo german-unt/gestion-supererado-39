@@ -87,7 +87,7 @@ Proveedor registroActual;
     while(fread(&registroActual, sizeof (Proveedor),1,pArchivo) == 1){
         if(registroActual.getIdProveedor() == id){
             fseek(pArchivo,-sizeof(Proveedor), SEEK_CUR);
-            registroActual.setEliminado(false);
+            registroActual.setEliminado(true);
             modificado = fwrite(&registroActual,sizeof(Proveedor),1,pArchivo) ? true : false;
             break;
         }

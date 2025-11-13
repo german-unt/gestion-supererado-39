@@ -20,7 +20,7 @@ Categoria::Categoria() {
 
 void Categoria::setIdCategoria(int idCategoria) {
         while(idCategoria < 0){
-        cout >> "ID INVALIDO, INGRESE OTRO ID: ";
+        cout << "ID INVALIDO, INGRESE OTRO ID: ";
         cin >> idCategoria;
     }
     _idCategoria = idCategoria;
