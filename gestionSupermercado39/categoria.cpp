@@ -1,8 +1,9 @@
-
 #include <iostream>
 #include <cstring>
 
 #include "categoria.h"
+#include "ArchivoCategoria.h"
+#include "funcionesGlobales.h"
 using namespace std;
 
 
@@ -20,7 +21,7 @@ Categoria::Categoria() {
 
 void Categoria::setIdCategoria(int idCategoria) {
         while(idCategoria < 0){
-        cout >> "ID INVALIDO, INGRESE OTRO ID: ";
+        cout << "ID INVALIDO, INGRESE OTRO ID: ";
         cin >> idCategoria;
     }
     _idCategoria = idCategoria;
@@ -46,17 +47,52 @@ bool Categoria::getEliminado() {
     return _eliminado;
 }
 
-void Categoria::cargarCategoria() {
-    cout << "Ingrese ID de categoria: ";
-    cin >> _idCategoria;
-    cin.ignore(); // limpia el buffer
-    cout << "Ingrese nombre de la categoria: ";
-    cin.getline(_nombre, 20);
-    _eliminado = false;
+Categoria Categoria::cargarCategoria() {
+    ArchivoCategoria archiC;
+    Categoria categoria;
+    int _idCategoria;
+    char _nombre[20];
+    bool _eliminado = false;
+
+
+    if(archiC.cantidadRegistros() == -1){
+        _idCategoria = 1;
+    }else{
+
+    _idCategoria = archiC.cantidadRegistros()+1;
+    }
+    categoria.setIdCategoria(_idCategoria);
+
+    cout << "Nombre : ";
+    cargarCadena(_nombre,19);
+    categoria.setNombre(_nombre);
+
+    categoria.setEliminado(_eliminado);
+
+
+    return categoria;
+}
+void Categoria::mostrarCategoria(Categoria categoria) {
+    cout << endl;
+    cout << "ID Categoria: " << categoria.getIdCategoria() << endl;
+    cout << "Nombre: " << categoria.getNombre() << endl;
+    if(categoria.getEliminado()){
+        cout << "Estado: Eliminado" << endl;
+    }else{
+        cout <<"Estado: Activo" << endl;
+    }
+    cout << "**************************************************"  <<endl;
 }
 
-void Categoria::mostrarCategoria() {
-    cout << "ID Categoria: " << _idCategoria << endl;
-    cout << "Nombre: " << _nombre << endl;
-    cout << "Eliminado: " << (_eliminado ? "Si" : "No") << endl;
+void Categoria::mostrarTodos(){
+    ArchivoCategoria archi("ArchivoCategoria.dat");
+    Categoria categoria;
+    for(int i = 0; i < archi.cantidadRegistros(); i++){
+        categoria = archi.leer(i);
+        if(!categoria.getEliminado()){
+            mostrarCategoria(categoria);
+        }
+    }
+    system("pause");
+
 }

@@ -22,6 +22,7 @@ public:
     bool getEliminado();
 
 
-    void cargarMarca();
-    void mostrarMarca();
+    Marca cargarMarca();
+    void mostrarMarca(Marca marca);
+    void mostrarTodos();
 };

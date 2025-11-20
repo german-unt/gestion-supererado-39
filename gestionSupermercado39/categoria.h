@@ -20,8 +20,9 @@ public:
     const char *getNombre();
     bool getEliminado();
 
-    void cargarCategoria();
-    void mostrarCategoria();
+    Categoria cargarCategoria();
+    void mostrarCategoria(Categoria categoria);
+    void mostrarTodos();
 
 };
 

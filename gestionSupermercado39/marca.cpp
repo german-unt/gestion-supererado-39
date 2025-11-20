@@ -1,6 +1,8 @@
+#include "funcionesGlobales.h"
 #include <cstring>
 #include <iostream>
 #include "marca.h"
+#include"ArchivoMarca.h"
 using namespace std;
 
 // Constructor con parámetros
@@ -47,18 +49,54 @@ bool Marca::getEliminado() {
     return _eliminado;
 }
 
-// Métodos de carga y visualización
-void Marca::cargarMarca() {
-    cout << "Ingrese ID de la marca: ";
-    cin >> _idMarca;
-    cin.ignore();
-    cout << "Ingrese nombre de la marca: ";
-    cin.getline(_nombre, 20);
-    _eliminado = false;
+Marca Marca::cargarMarca() {
+    ArchivoMarca archiM;
+    Marca marca;
+    int _idMarca;
+    char _nombre[20];
+    bool _eliminado = false;
+
+    if (archiM.cantidadRegistros() == -1){
+        _idMarca = 1;
+    }else{
+
+    _idMarca = archiM.cantidadRegistros()+1;
+    }
+    marca.setIdMarca(_idMarca);
+
+
+    cout << "Nombre: ";
+    cargarCadena(_nombre,19);
+    marca.setNombre(_nombre);
+
+    marca.setEliminado(_eliminado);
+
+
+
+    return marca;
+
+}
+void Marca::mostrarMarca(Marca marca) {
+    cout << endl;
+    cout << "ID Marca: " << marca.getIdMarca() << endl;
+    cout << "Nombre: " << marca.getNombre() << endl;
+    if(marca.getEliminado()){
+        cout << "Estado: Eliminado" << endl;
+    }else{
+        cout <<"Estado: Activo" << endl;
+    }
+    cout << "**************************************************"  <<endl;
 }
 
-void Marca::mostrarMarca() {
-    cout << "ID Marca: " << _idMarca << endl;
-    cout << "Nombre: " << _nombre << endl;
-    cout << "Eliminado: " << (_eliminado ? "Si" : "No") << endl;
+void Marca::mostrarTodos(){
+    ArchivoMarca archi("ArchivoMarca.dat");
+    Marca marca;
+    for(int i = 0; i < archi.cantidadRegistros(); i++){
+        marca = archi.leer(i);
+        if(!marca.getEliminado()){
+            mostrarMarca(marca);
+        }
+    }
+    system("pause");
+
 }

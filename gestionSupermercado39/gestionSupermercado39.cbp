@@ -32,10 +32,14 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="ArchivoCategoria.cpp" />
+		<Unit filename="ArchivoCategoria.h" />
 		<Unit filename="ArchivoCompra.cpp" />
 		<Unit filename="ArchivoCompra.h" />
 		<Unit filename="ArchivoCompraDetalle.cpp" />
 		<Unit filename="ArchivoCompraDetalle.h" />
+		<Unit filename="ArchivoMarca.cpp" />
+		<Unit filename="ArchivoMarca.h" />
 		<Unit filename="ArchivoProducto.cpp" />
 		<Unit filename="ArchivoProducto.h" />
 		<Unit filename="ArchivoProveedor.cpp" />
@@ -44,10 +48,9 @@
 		<Unit filename="ArchivoVenta.h" />
 		<Unit filename="ArchivoVentaDetalle.cpp" />
 		<Unit filename="ArchivoVentaDetalle.h" />
-		<Unit filename="categoria.cpp">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="categoria.cpp" />
 		<Unit filename="categoria.h">
+			<Option link="1" />
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="compra.cpp" />
@@ -62,8 +65,12 @@
 		<Unit filename="marca.cpp" />
 		<Unit filename="marca.h" />
 		<Unit filename="menu.cpp" />
+		<Unit filename="menuCategorias.cpp" />
+		<Unit filename="menuCategorias.h" />
 		<Unit filename="menuCompras.cpp" />
 		<Unit filename="menuCompras.h" />
+		<Unit filename="menuMarca.cpp" />
+		<Unit filename="menuMarca.h" />
 		<Unit filename="menuProductos.cpp" />
 		<Unit filename="menuProductos.h" />
 		<Unit filename="menuVenta.cpp" />
