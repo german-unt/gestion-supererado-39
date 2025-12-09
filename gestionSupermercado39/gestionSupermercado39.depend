@@ -376,11 +376,12 @@
 	"ArchivoCategoria.h"
 	"funcionesGlobales.h"
 
-1763006281 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\menucategorias.cpp
+1765291490 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\menucategorias.cpp
 	<iostream>
 	"menuCategorias.h"
+	"funcionesGlobales.h"
 
-1765171720 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\menumarca.cpp
+1765218797 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\menumarca.cpp
 	<iostream>
 	"menuMarca.h"
 	"funcionesGlobales.h"

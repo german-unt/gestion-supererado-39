@@ -1,5 +1,6 @@
 #include <iostream>
 #include "menuCategorias.h"
+#include "funcionesGlobales.h"
 using namespace std;
 
 
@@ -37,6 +38,62 @@ void menuCategoria() {
             cout << "LISTADO DE CATEGORIA" << endl;
             reg.mostrarTodos() ;
         } break;
+         case 3: { /// ELIMINAR MARCA
+    system("cls");
+    int id;
+    cout << "Ingrese ID de la marca a eliminar: ";
+    cin >> id;
+
+    bool ok = arch.eliminarLogico(id);
+
+    if(ok){
+        cout << "Marca eliminada correctamente." << endl;
+    }else{
+        cout << "No se pudo eliminar (ID inexistente o ya eliminada)." << endl;
+    }
+    system("pause");
+} break;
+
+case 4: { /// MODIFICAR MARCA
+    system("cls");
+    int id;
+    cout << "Ingrese ID a modificar: ";
+    cin >> id;
+
+    Categoria categoriaOriginal;
+    bool existe = false;
+
+    /// Buscamos si existe la categoria
+    for(int i=0; i<arch.cantidadRegistros(); i++){
+        categoriaOriginal = arch.leer(i);
+        if(categoriaOriginal.getIdCategoria() == id && !categoriaOriginal.getEliminado()){
+            existe = true;
+            break;
+        }
+    }
+
+    if(!existe){
+        cout << "No existe una categoria con ese ID." << endl;
+        system("pause");
+        break;
+    }
+
+    Categoria nueva;
+    char nombre[20];
+
+    cout << "Ingrese nuevo nombre: ";
+    cargarCadena(nombre,19);
+    nueva.setIdCategoria(id);
+    nueva.setNombre(nombre);
+    nueva.setEliminado(false);
+
+    int ok = arch.modificarRegistro(nueva,id);
+
+    if(ok == 1) cout << "Categoria modificada correctamente." << endl;
+    else        cout << "Error al modificar." << endl;
+
+    system("pause");
+} break;
 
         }
         cout << endl;
