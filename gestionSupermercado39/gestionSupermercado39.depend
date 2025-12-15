@@ -162,17 +162,17 @@
 
 1762948083 c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\compradetalle.h
 
-1763006271 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\archivoproducto.cpp
+1765317189 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\archivoproducto.cpp
 	"ArchivoProducto.h"
 	"Producto.h"
 	<iostream>
 	<cstring>
 
-1763006271 c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\archivoproducto.h
+1765317189 c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\archivoproducto.h
 	<string>
 	"Producto.h"
 
-1763006272 c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\producto.h
+1765770501 c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\producto.h
 	"fecha.h"
 
 1763679845 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\archivoproveedor.cpp
@@ -200,7 +200,7 @@
 1763006272 c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\venta.h
 	"fecha.h"
 
-1763006271 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\archivoventadetalle.cpp
+1765770594 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\archivoventadetalle.cpp
 	<cstdio>
 	<cstring>
 	<iostream>
@@ -230,13 +230,14 @@
 	"fecha.h"
 	<ctime>
 
-1763672390 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\main.cpp
+1765771223 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\main.cpp
 	<iostream>
 	"menuProductos.h"
 	"menuVenta.h"
 	"menuCompras.h"
 	"menuCategorias.h"
 	"menuMarca.h"
+	"Reporte.h"
 
 1763006281 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\marca.cpp
 	"funcionesGlobales.h"
@@ -247,11 +248,12 @@
 
 1763006281 c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\marca.h
 
-1763679845 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\menu.cpp
+1765754879 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\menu.cpp
 	<iostream>
 	"menu.h"
+	"Reporte.h"
 
-1763679845 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\producto.cpp
+1765771015 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\producto.cpp
 	<iostream>
 	<cstring>
 	"producto.h"
@@ -337,7 +339,7 @@
 	"ArchivoCompra.h"
 	"ArchivoCompraDetalle.h"
 
-1763679845 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\menuproductos.cpp
+1765319060 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\menuproductos.cpp
 	<iostream>
 	"menuProductos.h"
 
@@ -376,7 +378,7 @@
 	"ArchivoCategoria.h"
 	"funcionesGlobales.h"
 
-1765291490 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\menucategorias.cpp
+1765317189 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\menucategorias.cpp
 	<iostream>
 	"menuCategorias.h"
 	"funcionesGlobales.h"
@@ -398,4 +400,12 @@
 	"menuProductos.h"
 	"menuVenta.h"
 	"menuCompras.h"
+
+1765769277 c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\reporte.h
+
+1765769327 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\reporte.cpp
+	<iostream>
+	"Reporte.h"
+	"ArchivoProducto.h"
+	"producto.h"
 
