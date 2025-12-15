@@ -119,6 +119,14 @@ Fecha Producto::getFechaDeVencimiento(){
     return _fechaDeVencimiento;
 }
 
+bool Producto::stockDisponible(int cantidad){
+    if (cantidad>0){
+        return true;
+    }else{
+    return false;
+    }
+};
+
 // Métodos auxiliares
 Producto Producto::cargarProducto() {
     ArchivoProducto archiP;

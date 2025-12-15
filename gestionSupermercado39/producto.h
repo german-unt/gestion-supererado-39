@@ -14,7 +14,8 @@ private:
   Fecha _fechaDeVencimiento;
 
 public:
-
+Producto(int idProducto, int idCategoria, int idMarca, float precioUnitario, int stock, const char *nombreProducto, bool eliminado, Fecha fechaDeVencimiento);
+Producto();
 //setters
 void setIdProducto(int idProducto);
 void setIdCategoria(int idCategoria);
