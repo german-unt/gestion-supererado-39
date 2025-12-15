@@ -5,7 +5,7 @@ using namespace std;
 #include "menuCompras.h"
 #include"menuCategorias.h"
 #include"menuMarca.h"
-
+#include "Reporte.h"
 
 int main() {
     int opcion;
@@ -18,6 +18,7 @@ int main() {
         cout << "3) Compras" << endl;
         cout << "4) Categorias" << endl;
          cout <<"5) Marcas" << endl;
+        cout << "6) Reportes" << endl;
         cout << "0) Salir" << endl;
         cout << "Opcion: ";
         cin >> opcion;
@@ -42,6 +43,10 @@ int main() {
         case 5:
             system("cls");
             menuMarca();
+            break;
+        case 6:
+            system("cls");
+            menuReportes();
             break;
         default: cout << "Opcion no valida" <<endl;
         system ("pause");
