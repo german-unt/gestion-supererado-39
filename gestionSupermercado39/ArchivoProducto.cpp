@@ -115,20 +115,29 @@ Producto ArchivoProducto::leer(int numero)
  }
 
 bool ArchivoProducto::buscarPorId(int idProducto, Producto &productoEncontrado){
+    if(idProducto <= 0){
+        return false;
+    }
+
     FILE *pArchivo = fopen(_nombreArchivo, "rb");
     if(pArchivo == nullptr){
         return false;
     }
+
     while(fread(&productoEncontrado,sizeof(Producto),1,pArchivo)==1){
-        if(productoEncontrado.getIdProducto() == idProducto && !productoEncontrado.getEliminado()){
+        if(productoEncontrado.getIdProducto() == idProducto &&
+           !productoEncontrado.getEliminado()){
             fclose(pArchivo);
             return true;
         }
     }
+
     fclose(pArchivo);
     return false;
-
 }
+
+
+
 
 
 
