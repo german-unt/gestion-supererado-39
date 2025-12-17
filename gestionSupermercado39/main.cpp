@@ -6,6 +6,7 @@ using namespace std;
 #include"menuCategorias.h"
 #include"menuMarca.h"
 #include "Reporte.h"
+#include "menuReportes.h"
 
 int main() {
     int opcion;

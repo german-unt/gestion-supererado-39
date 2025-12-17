@@ -32,7 +32,7 @@ int menu() {
             break;
         case 4:
             system("cls");
-            menuReportes();
+            reporteProductoMenosVendido();
             break;
         case 0:
             system("cls");
