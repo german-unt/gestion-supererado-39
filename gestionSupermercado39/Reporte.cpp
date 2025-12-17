@@ -2,23 +2,24 @@
 #include "Reporte.h"
 #include "ArchivoProducto.h"
 #include "producto.h"
+#include "ArchivoVentaDetalle.h"
 
 using namespace std;
 
-void menuReportes (){
+void reporteStock (){
 
-ArchivoProducto arch("ArchivoProducto.dat");
+ArchivoProducto archP("ArchivoProducto.dat");
 
 Producto prod;
 
-int total = arch.cantidadRegistros();
+int total = archP.cantidadRegistros();
 
 system ("cls");
 cout << "_-_-_- REPORTES DE STOCK -_-_-_-" <<endl<< endl;
 
  bool hubo = false;
     for (int i = 0; i < total; i++) {
-        prod = arch.leer(i);
+        prod = archP.leer(i);
         if (prod.getEliminado()) continue;
 
         int stk = prod.getStock();
@@ -46,6 +47,81 @@ cout << "_-_-_- REPORTES DE STOCK -_-_-_-" <<endl<< endl;
 }
 
 
+void reporteProductoMenosVendido (){
 
+ArchivoProducto archP("ArchivoProducto.dat");
+Producto prod;
+int cantProductos = archP.cantidadRegistros();
+
+
+ArchivoVentaDetalle archV("ArchivoVentaDetalle.dat");
+VentaDetalle ven;
+int cantVentas = archV.cantidadRegistros();
+
+
+system ("cls");
+cout << "_-_-_- PRODUCTO MENOS VENDIDO -_-_-_-" <<endl<< endl;
+
+int *vec;
+vec = new int [cantProductos];
+
+int menorIdProducto;
+int menor = vec[0];
+
+if(vec == nullptr){
+    cout << "Error al asignar memoria" << endl;
+    return;
+}
+
+for(int i=0; i<cantProductos; i++){
+    prod = archP.leer(i);
+    int acumulador = 0;
+
+    for (int j=0; j<cantVentas; j++){
+        ven = archV.leer(j);
+
+        if(ven.getIdProducto() == prod.getIdProducto() && !ven.getEstado() && !prod.getEliminado()){
+
+
+            acumulador += ven.getCantidad();
+
+        }
+
+    }
+    vec[i] = acumulador;
+
+
+}
+
+
+
+for (int i=0; i<cantProductos; i++){
+    if(vec[i] > 0){
+
+        if(vec[i] < menor){
+
+
+        menor = vec[i];
+        menorIdProducto = i+1;
+        }
+
+
+    }
+
+}
+
+
+
+    prod = archP.leer(menorIdProducto-1);
+    prod.mostrarProducto(prod);
+
+
+system("pause");
+
+
+
+delete []vec;
+
+}
 
 
