@@ -162,7 +162,7 @@
 
 1762948083 c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\compradetalle.h
 
-1765317189 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\archivoproducto.cpp
+1765917915 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\archivoproducto.cpp
 	"ArchivoProducto.h"
 	"Producto.h"
 	<iostream>
@@ -200,7 +200,7 @@
 1763006272 c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\venta.h
 	"fecha.h"
 
-1765770594 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\archivoventadetalle.cpp
+1765931548 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\archivoventadetalle.cpp
 	<cstdio>
 	<cstring>
 	<iostream>
@@ -209,7 +209,7 @@
 	"ArchivoProducto.h"
 	"Producto.h"
 
-1763006271 c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\archivoventadetalle.h
+1765931672 c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\archivoventadetalle.h
 	"ventaDetalle.h"
 
 1763006272 c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\ventadetalle.h
@@ -230,7 +230,7 @@
 	"fecha.h"
 	<ctime>
 
-1765771223 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\main.cpp
+1765943025 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\main.cpp
 	<iostream>
 	"menuProductos.h"
 	"menuVenta.h"
@@ -238,6 +238,7 @@
 	"menuCategorias.h"
 	"menuMarca.h"
 	"Reporte.h"
+	"menuReportes.h"
 
 1763006281 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\marca.cpp
 	"funcionesGlobales.h"
@@ -248,7 +249,7 @@
 
 1763006281 c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\marca.h
 
-1765754879 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\menu.cpp
+1765930402 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\menu.cpp
 	<iostream>
 	"menu.h"
 	"Reporte.h"
@@ -271,7 +272,7 @@
 	"venta.h"
 	"ArchivoVenta.h"
 
-1763679845 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\ventadetalle.cpp
+1765942301 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\ventadetalle.cpp
 	<iostream>
 	"ventaDetalle.h"
 	"ArchivoProducto.h"
@@ -401,11 +402,19 @@
 	"menuVenta.h"
 	"menuCompras.h"
 
-1765769277 c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\reporte.h
+1765929220 c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\reporte.h
 
-1765769327 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\reporte.cpp
+1765942331 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\reporte.cpp
 	<iostream>
 	"Reporte.h"
 	"ArchivoProducto.h"
 	"producto.h"
+	"ArchivoVentaDetalle.h"
+
+1765942920 source:c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\menureportes.cpp
+	<iostream>
+	"menuReportes.h"
+	"Reporte.h"
+
+1765942869 c:\users\usuario\documents\utn\tecnicatura en programacion\programacion 2\gestion-supererado-39\gestionsupermercado39\menureportes.h
 
