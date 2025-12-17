@@ -102,3 +102,15 @@ bool ArchivoVentaDetalle::existeRegistro(int idVenta){
     return existe;
 
 }
+VentaDetalle ArchivoVentaDetalle::leer(int numero){
+   FILE *p = fopen(_nombreArchivo, "rb");
+   if (p==nullptr)
+   {
+     return VentaDetalle();
+   }
+   VentaDetalle aux;
+   fseek(p,numero*sizeof(VentaDetalle), 0);
+   fread(&aux, sizeof(VentaDetalle), 1,p);
+   fclose(p);
+   return aux;
+ }

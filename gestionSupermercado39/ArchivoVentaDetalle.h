@@ -13,6 +13,7 @@ public:
     bool listarPorVenta(int idVenta);
     int cantidadRegistros();
     bool existeRegistro(int idVenta);
+    VentaDetalle leer(int i);
 
 };
 

@@ -48,6 +48,8 @@
 		<Unit filename="ArchivoVenta.h" />
 		<Unit filename="ArchivoVentaDetalle.cpp" />
 		<Unit filename="ArchivoVentaDetalle.h" />
+		<Unit filename="Reporte.cpp" />
+		<Unit filename="Reporte.h" />
 		<Unit filename="categoria.cpp" />
 		<Unit filename="categoria.h">
 			<Option link="1" />
@@ -73,6 +75,8 @@
 		<Unit filename="menuMarca.h" />
 		<Unit filename="menuProductos.cpp" />
 		<Unit filename="menuProductos.h" />
+		<Unit filename="menuReportes.cpp" />
+		<Unit filename="menuReportes.h" />
 		<Unit filename="menuVenta.cpp" />
 		<Unit filename="menuVenta.h" />
 		<Unit filename="producto.cpp" />
